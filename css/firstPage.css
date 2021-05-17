@@ -1,0 +1,7 @@
+html { 
+    background: url("https://news.cehd.umn.edu/wp-content/uploads/2020/09/volodymyr-hryshchenko-7JAyy7jLTAk-unsplash-1024x558.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
