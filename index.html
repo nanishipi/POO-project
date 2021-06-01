@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <img class="bg" src="/images/covid_bear.jpg" alt="bearBackground">
+    <img class="bg" src="images/covid_bear.jpg" alt="bearBackground">
     <div class="carousel-caption  d-md-block ">
         <strong>
             <h2 class="banner-title ; animated bounceInRight " style="animation-delay: 1s">Covi
@@ -32,38 +32,34 @@
             <div class="modal-content">
                 <div class="modal-header">
 
-                    <img class="modalBG" src="images/beautiful-sunrise-illustration_167947-62.jpg" alt="">
-                   <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        x
-                    </button> -->
-                    
+                    <img class="modalBG" src="images/modal_bg.png" alt="">
+
+
                 </div>
 
                 <div class="modal-body">
                     <form id="frmLogin">
-                        <img class="img-lg-responsive logoModal" src="images/Logo CoviLearn.png"
-                            style=" display: block; margin-left: auto; margin-right: auto; margin-bottom: 10px; width: 100px;height: 70px;">
+
 
                         <div class="form-group d-flex justify-content-center">
                             <input type="text" class="form-control col-lg-6  modalField" id="txtUsername"
-                                placeholder="Enter username">
+                                placeholder="Utilizador">
                         </div>
 
                         <div class="form-group d-flex justify-content-center">
                             <input type="password" class="form-control col-lg-6 m-2 modalField" id="txtPassword"
-                                placeholder="Enter password">
+                                placeholder="Senha">
                         </div>
 
 
                         <div class="d-flex justify-content-center mb-3">
-                            <button type="button" class="btn btn-secondary navButton mr-1 col-lg-3 "
-                                data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary navButton col-lg-3" id="btnSubmit">Log
-                                In</button>
+
+                            <button type="submit" class="btn btn-primary navButton col-lg-6"
+                                id="btnSubmit">Entrar</button>
 
                         </div>
-                        <a href="#mdlRegister" id="btnRegister" class="col-lg-3 d-flex justify-content-right "
-                            type="submit" data-dismiss="modal" data-toggle="modal">First Time?</a>
+                        <a href="#mdlRegister" id="btnRegister" class="col-lg-4 d-flex justify-content-right "
+                            type="submit" data-dismiss="modal" data-toggle="modal">Primeira vez?</a>
                         <div id="mdlLoginMessage" class="col-lg-12 d-flex justify-content-center">
 
                         </div>
@@ -74,8 +70,82 @@
     </div>
     </div>
     </div>
-   
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+
+    <!-- Register Modal -->
+
+    <div class="modal fade" id="mdlRegister" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <img class="modalBG" src="images/modal_bg.png" alt="">
+
+
+                </div>
+                <div class="modal-body">
+                    <form id="frmRegister">
+                        <div class="form-body">
+                            <div class="file d-flex justify-content-center  mb-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control text-center modalField" id="txtUsernameRegister"
+                                        placeholder="Utilizador">
+                                </div>
+                                <div class="col-md-6 col-md-offset-2">
+                                    <input type="text" class="form-control text-center modalField" id="txtEmailRegister"
+                                        placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="file d-flex justify-content-center  mb-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control text-center modalField" id="txtPasswordRegister"
+                                        placeholder="Senha">
+                                </div>
+                                <div class="col-md-6 col-md-offset-2">
+                                    <input type="text" class="form-control text-center modalField" id="txtPasswordRegister2"
+                                        placeholder="Confirmar Senha">
+                                </div>
+
+                            </div>
+
+                            <div class="file d-flex justify-content-center mb-3">
+                                <div class="col-md-6 text-center">
+                                    <select class="slt text-center" name="" id="sltGender">
+                                        <option value="male">Masculino</option>
+                                        <option value="female">Feminino</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-md-offset-2">
+                                    <input class="date text-center" type="date" id="birthday">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="file d-flex justify-content-center mb-3">
+                            <div class="col-md-12">
+                                <input type="text" id="txtUserPhoto" class="form-control text-center modalField"
+                                    placeholder="Foto">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center mb-3">
+
+                            <button type="submit" class="btn btn-primary navButton col-lg-3"
+                                id="btnRegister">Register</button>
+
+                        </div>
+                        <div class="modal-footer">
+                            <div id="mdlRegisterMessage" class="col-lg-12 d-flex justify-content-center"></div>
+                        </div>
+                </div>
+                </form>
+            </div>
+           
+        </div>
+    </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -86,7 +156,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    
+
 </body>
 
 </html>
