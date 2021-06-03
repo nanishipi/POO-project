@@ -1,4 +1,4 @@
-export default class UserModel {
+/* export default class UserModel {
     constructor() {
         this.users = localStorage.users ? JSON.parse(localStorage.users) : []
     }
@@ -95,6 +95,91 @@ export default class UserModel {
 
         }
         this.users= this.users.map(user=>user.id==usernew.id?usernew:user)
+        this._persist()
+    }
+} */
+
+
+export default class UserModel {
+    constructor() {
+        this.users = localStorage.users ? JSON.parse(localStorage.users) : [];
+    }
+
+    getAll() {
+        return this.users
+    }
+
+    create(username, email, password, gender , birthday, photo, adress ,type, status) {
+        const user = {
+            id: this.users.length > 0 ? this.users[this.users.length - 1].id + 1 : 1,
+            username: username,
+            email: email,
+            password: password,
+            gender: gender,
+            birthday: birthday,
+            photo: photo,
+            adress:adress,
+            type:type,
+            status:status,
+            points:0,
+        }
+        this.users.push(user);
+        this._persist();
+    }
+
+    remove(username) {
+        this.users = this.users.filter(user => user.username != username)
+        this._persist()
+    }
+    block(username){
+        this.users = this.users.filter(user => user.username != username)
+    }
+
+    login(username) {
+        sessionStorage.setItem('loggedUser', username);
+        
+    }
+
+    logout() {
+        sessionStorage.removeItem('loggedUser');
+        sessionStorage.removeItem("userPhoto");
+    }
+
+    isLogged() {
+        return sessionStorage.getItem('loggedUser') !== null ? true : false;
+    }
+
+    setCurrentUser(id) {
+        localStorage.setItem("user", id); 
+    } 
+
+    getCurrentUser() {
+        return this.users.find(user => user.id === +localStorage.user)
+    } 
+
+    _persist() {
+        localStorage.setItem('users', JSON.stringify(this.users));
+    }
+
+    editProfile(username, email, password, gender , birthday, photo, adress ,type, status){
+        const currentUser = this.getCurrentUser()
+
+        const UserNew = {
+            id: currentUser.id,
+            username: username,
+            email: email,
+            password: password,
+            gender: gender,
+            birthday: birthday,
+            photo: photo,
+            adress:adress,
+            type:type,
+            status:status,
+            points:currentUser.points,
+            
+        }
+        
+        this.users= this.users.map(user=>user.id==currentUser.id?UserNew:user)
         this._persist()
     }
 }
