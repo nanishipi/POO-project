@@ -24,6 +24,8 @@ body {
     text-align: center;
 }
 
-#card-image {
-    
+#quizzButton {
+    border-radius: 30px;
+    width: 150px;
+    height: 40px;
 }
