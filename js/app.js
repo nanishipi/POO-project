@@ -5,14 +5,9 @@ import UserView from './views/UserView.js'
 class App {
     constructor() {
         this.routes = {
-
             'index': [
                 UserView,
-                
             ],
-          
-
-            
         };
 
         // import dummy data for testing purposes
@@ -38,12 +33,10 @@ class App {
     }
     _importDataFixtures() {
         const users = []
-
+        
         if (!localStorage.users) {
             localStorage.setItem('users', JSON.stringify(users));
         }
-
-      
     }
 }
 

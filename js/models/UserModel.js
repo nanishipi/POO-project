@@ -176,7 +176,6 @@ export default class UserModel {
             type:type,
             status:status,
             points:currentUser.points,
-            
         }
         
         this.users= this.users.map(user=>user.id==currentUser.id?UserNew:user)
