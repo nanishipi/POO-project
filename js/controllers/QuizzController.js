@@ -5,12 +5,8 @@ export default class QuizzController {
         this.QuizzModel = new QuizzModel();
     }
 
-    createUser(username, email, password, gender , birthday, photo, adress ,type,status) {
-        if (!this.userModel.getAll().some(user => user.username === username)) {
-            this.userModel.create(username, email, password, gender , birthday, photo, adress ,type,status);
-        } else {
-            throw Error(`Utilizador "${username}" já existe!`);
-        }
+    createQuizz(pergunta, opcao1, opcao2, opcao3 , opcao4, resposta, pontos , dificuldade, imagem) {
+        this.QuizzModel.create(pergunta, opcao1, opcao2, opcao3 , opcao4, resposta, pontos , dificuldade, imagem);
     }
 
     loginUser(username, password) {

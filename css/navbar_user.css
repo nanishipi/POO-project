@@ -28,6 +28,9 @@
     display: block;
 }
 
+.sidenav ul li {
+    display: inline;
+}
 /* When you mouse over the navigation links, change their color */
 
 .sidenav a:hover {

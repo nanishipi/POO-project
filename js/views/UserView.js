@@ -74,9 +74,7 @@ export default class UserView {
                 if (sessionStorage.getItem("userStatus") === "true") {
                     this.displayLoginMessage('User logged in with success!', 'success');
                     if (sessionStorage.getItem("userType") === "user") {
-                        LoadPage = "html/homepage.html"
-
-
+                        LoadPage = "html/users.homepage.html"
                     } else {
                         LoadPage = "html/admin.html"
                     }
@@ -88,11 +86,7 @@ export default class UserView {
 
                 // Wait 1 second before reloading, so the user can see the login success message    
                 setTimeout(() => {
-
                     location.href = LoadPage
-
-
-
                 },
                     1000);
 
