@@ -1,5 +1,6 @@
 import UserView from './views/UserView.js'
 import QuizzView from './views/QuizzView.js'
+import QuestionView from './views/question.view.js';
 
 
 
@@ -9,9 +10,12 @@ class App {
             'index': [
                 UserView,
             ],
-            'quizzes.users': [
-                UserView,
+            'quizzes': [
+                
                 QuizzView
+            ],
+            'question':[
+                QuestionView
             ]
         };
 

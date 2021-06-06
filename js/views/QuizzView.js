@@ -19,11 +19,36 @@ export default class QuizzView {
     Play() {
         this.btnPlay1.addEventListener('click', event => {
             event.preventDefault();
-            console.log("fasasg");
-            alert("gasg")
-            /* sessionStorage.setItem('level',1) */
+            
+            sessionStorage.setItem('level',1)
+            setTimeout(() => {
+                location.href = "question.html"
+
+            },
+                1000);
         })
 
+        this.btnPlay2.addEventListener('click', event => {
+            event.preventDefault();
+            
+            sessionStorage.setItem('level',2)
+            setTimeout(() => {
+                location.href = "question.html"
+
+            },
+                1000);
+        })
+
+        this.btnPlay3.addEventListener('click', event => {
+            event.preventDefault();
+            
+            sessionStorage.setItem('level',3)
+            setTimeout(() => {
+                location.href = "question.html"
+
+            },
+                1000);
+        })
     }
 
 }

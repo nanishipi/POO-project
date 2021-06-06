@@ -28,9 +28,6 @@ export default class QuizzModel {
         localStorage.setItem("quizz", id); 
     } 
 
-    getQuizzLevel(level){
-        sessionStorage.setItem('level',level)
-    }
 
     getCurrentQuizz() {
         return this.quizzes.find(quizz => quizz.id === +localStorage.quizz)

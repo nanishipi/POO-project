@@ -18,12 +18,18 @@ export default class QuizzController {
         return this.QuizzModel.getCurrentQuizz()
     } 
 
-    getQuizzLevel(level){
-        return this.getQuizzLevel(level)
-    }
 
-    getQuizzes(){
-        return this.QuizzModel.getQuizzes()
+
+    getQuizzes(level=sessionStorage.getItem('level')){
+        
+        const quizzes = this.QuizzModel.getQuizzes()
+        let filteredQuizzes=[]
+        for(const question of quizzes){
+            if(question.nivel == level);
+            filteredQuizzes.push(question)
+        }
+        return filteredQuizzes
+
     }
 
     removeQuizz(id) {
