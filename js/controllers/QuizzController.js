@@ -5,53 +5,35 @@ export default class QuizzController {
         this.QuizzModel = new QuizzModel();
     }
 
-    createQuizz(pergunta, opcao1, opcao2, opcao3 , opcao4, resposta, pontos , dificuldade, imagem) {
-        this.QuizzModel.create(pergunta, opcao1, opcao2, opcao3 , opcao4, resposta, pontos , dificuldade, imagem);
+    createQuizz(pergunta, opcao1, opcao2, opcao3 , opcao4, resposta, pontos , nivel, imagem) {
+        this.QuizzModel.create(pergunta, opcao1, opcao2, opcao3 , opcao4, resposta, pontos , nivel, imagem);
     }
 
-    loginUser(username, password) {
-        if (this.userModel.getAll().some(user => { return user.username === username && user.password === password })) {
-            this.userModel.login(username);
-            this.userCompare = JSON.parse(localStorage.getItem('users'))
-            for (let i = 0; i <= [this.userModel.users.length - 1]; i++) {
-                if (this.userCompare[i].username === sessionStorage.getItem('loggedUser')) {
-                    sessionStorage.setItem('userPhoto', this.userPhotoLink = JSON.parse(localStorage.getItem('users'))[i].photo);
-                    sessionStorage.setItem('userType', this.userType = JSON.parse(localStorage.getItem('users'))[i].type)
-                    sessionStorage.setItem('userStatus', this.userStatus = JSON.parse(localStorage.getItem('users'))[i].status)
-                    localStorage.setItem('user',this.user=JSON.parse(localStorage.getItem('users'))[i].id)
-                }
-            }
-            return true;
-        } else {
-            throw Error('Login inválido!');
-        }    
-    }
+   
 
-    setCurrentUser(id) {
-        this.userModel.setCurrentUser(id)
+    setCurrentQuizz(id) {
+        this.QuizzModel.setCurrentQuizz(id)
     }
-    getCurrentUser() {
-        return this.userModel.getCurrentUser()
+    getCurrentQuizz() {
+        return this.QuizzModel.getCurrentQuizz()
     } 
 
-    logoutUser() {
-        this.userModel.logout();
+    getQuizzLevel(level){
+        return this.getQuizzLevel(level)
     }
 
-    checkLoginStatus() {
-        return this.userModel.isLogged();
+    getQuizzes(){
+        return this.QuizzModel.getQuizzes()
     }
 
-    removeUser(username) {
-        this.userModel.remove(username)
+    removeQuizz(id) {
+        this.QuizzModel.remove(id)
     }
 
-    blockUser(username) {
-        this.userModel.block(username)
-    }
 
-    editProfile(username, email, password, gender , birthday, photo, adress ,type,status) {
-        this.userModel.editProfile(username, email, password, gender , birthday, photo, adress ,type,status)
+
+    editQuizz(pergunta, opcao1, opcao2, opcao3 , opcao4, resposta, pontos , nivel, imagem) {
+        this.QuizzModel.editQuizz(pergunta, opcao1, opcao2, opcao3 , opcao4, resposta, pontos , nivel, imagem)
         
     }
 }

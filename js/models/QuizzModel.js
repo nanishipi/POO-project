@@ -7,7 +7,7 @@ export default class QuizzModel {
         return this.quizzes
     }
 
-    create(pergunta, opcao1, opcao2, opcao3 , opcao4, resposta, pontos , dificuldade, imagem) {
+    create(pergunta, opcao1, opcao2, opcao3 , opcao4, resposta, pontos , nivel, imagem) {
         const quizz = {
             id: this.quizzes.length > 0 ? this.quizzes[this.users.length - 1].id + 1 : 1,
             pergunta: pergunta,
@@ -17,7 +17,7 @@ export default class QuizzModel {
             opcao4: opcao4,
             resposta: resposta,
             pontos:pontos,
-            dificuldade:dificuldade,
+            nivel:nivel,
             imagem:imagem,
         }
         this.quizzes.push(quizz);
@@ -28,15 +28,23 @@ export default class QuizzModel {
         localStorage.setItem("quizz", id); 
     } 
 
+    getQuizzLevel(level){
+        sessionStorage.setItem('level',level)
+    }
+
     getCurrentQuizz() {
         return this.quizzes.find(quizz => quizz.id === +localStorage.quizz)
     } 
+    removeQuizz(id) {
+        this.quizzes = this.quizzes.filter(quizz => quizz.id != id)
+        this._persist()
+    }
 
     _persist() {
         localStorage.setItem('quizzes', JSON.stringify(this.quizzes));
     }
 
-    editQuizz(pergunta, opcao1, opcao2, opcao3 , opcao4, resposta, pontos , dificuldade, imagem){
+    editQuizz(pergunta, opcao1, opcao2, opcao3 , opcao4, resposta, pontos , nivel, imagem){
         const currentQuizz = this.getCurrentQuizz()
         const newQuizz = {
             id: currentQuizz.id,
@@ -47,9 +55,9 @@ export default class QuizzModel {
             opcao4: opcao4,
             resposta: resposta,
             pontos:pontos,
-            dificuldade:dificuldade,
+            nivel:nivel,
             imagem:imagem,
-            points:currentQuizz.points,
+           
         }
         
         this.quizzes= this.quizzes.map(quizz=>quizz.id==currentQuizz.id?newQuizz:quizz)
