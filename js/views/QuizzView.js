@@ -4,41 +4,27 @@ export default class QuizzView {
 
     constructor() {
         this.quizzController = new QuizzController()
-        
+
         // Catalog
-       /*  this.catalog = document.querySelector("#myCatalog") */
-    
-        
-  
-        
+        /*  this.catalog = document.querySelector("#myCatalog") */
+        this.btnPlay1 = document.getElementById('quizzButton1')
+        this.btnPlay2 = document.getElementById('quizzButton2')
+        this.btnPlay3 = document.getElementById('quizzButton3')
+
+
+        this.Play()
     }
-  
-/*    renderCatalog(quizzes=[]){
 
-    const quizzLv1=[];
-    const quizzLv2=[];
-    const quizzLv3=[];
-    let result = ''
-    let i=0
 
-    for(const quizz of quizzes){
-        if(quizz.dificuldade == 1){
-            quizzLv1.push(quizz)
-        }
-        else if(quizz.dificuldade == 2){
-            quizzLv2.push(quizz)
-        }
-        else{
-            quizzLv3.push(quizz)
-        }
+    Play() {
+        this.btnPlay1.addEventListener('click', event => {
+            event.preventDefault();
+            console.log("fasasg");
+            alert("gasg")
+            /* sessionStorage.setItem('level',1) */
+        })
+
     }
-} */
-      /*   this.bindAddSeeMoreEvent() */
-   
-   /* 
-        bindPlay(){
 
-
-
-   
 }
+

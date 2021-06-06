@@ -1,4 +1,4 @@
-import QuizzModel from '../models/QuizzModel'
+import QuizzModel from '../models/QuizzModel.js'
 
 export default class QuizzController {
     constructor() {

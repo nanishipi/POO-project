@@ -12,7 +12,7 @@ class App {
             'quizzes.users': [
                 UserView,
                 QuizzView
-            ],
+            ]
         };
 
         // import dummy data for testing purposes
@@ -86,7 +86,9 @@ class App {
             
         
         ]
-        
+        if (!localStorage.quizzes) {
+            localStorage.setItem('quizzes', JSON.stringify(quizzes));
+        }
         if (!localStorage.users) {
             localStorage.setItem('users', JSON.stringify(users));
         }
