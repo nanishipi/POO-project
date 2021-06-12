@@ -1,5 +1,5 @@
 /* The sidebar menu */
-.sidenav {
+#sidenav {
     height: 100%;
     /* Full-height: remove this if you want "auto" height */
     width: 250px;
@@ -11,34 +11,42 @@
     top: 0;
     /* Stay at the top */
     left: 0;
-    background-color: #111;
+    background-color: #D741A7;
     /* Black */
     overflow-x: hidden;
     /* Disable horizontal scroll */
     padding-top: 20px;
 }
 
+i {
+    color: #F2CD5D;
+    padding-right: 10px;
+}
 /* The navigation menu links */
 
-.sidenav a {
-    padding: 6px 8px 6px 16px;
+#sidenav a {
+    padding: 6px 8px 6px 20px;
     text-decoration: none;
+    font-family: lobster;
     font-size: 25px;
-    color: #818181;
+    color: #D741A7;
+    background-color: #3A1772;
     display: block;
 }
 
-.sidenav ul li {
-    display: inline;
+#sidenav img{
+    padding: 20px 20px 6px 30px;
 }
 /* When you mouse over the navigation links, change their color */
+#sidenav a:hover {
+    color: #F2CD5D;
+}
 
-.sidenav a:hover {
-    color: #f1f1f1;
+#sidenav a:active {
+    color: #F2CD5D;
 }
 
 /* Style page content */
-
 .main {
     margin-left: 160px;
     /* Same as the width of the sidebar */
