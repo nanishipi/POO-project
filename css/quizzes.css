@@ -16,7 +16,7 @@ body {
     height: 35%;
     position: relative;
     left: 50vh;
-    top: 30vh;
+    top: 15vh;
 }
 
 .card-title {
@@ -26,13 +26,21 @@ body {
     text-align: center;
 }
 
+.title{
+
+    position: relative;
+    font-size: 5rem;
+    top: 10vh;
+    left: 15vh;
+    text-align: center;
+}
 
 
 .quizzButton {
     position: relative;
     left: 100vh;
-    top: 35vh;
-    margin-bottom: 40vh;
+    top: 20vh;
+    margin-bottom: 25vh;
     border-radius: 30px;
     width: 150px;
     height: 40px;
