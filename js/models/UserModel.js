@@ -181,4 +181,28 @@ export default class UserModel {
         this.users= this.users.map(user=>user.id==currentUser.id?UserNew:user)
         this._persist()
     }
+
+    addPoints(points){
+        const user = this.getCurrentUser()
+        let newPoints=user.points+points
+        const usernew={
+            id:user.id,
+            email:user.email,
+            username:user.username,
+            password:user.password,
+            location:user.location,
+            genre: user.genre,
+            weight: user.weight,
+            birthDate: user.birthDate,
+            aboutUser: user.aboutUser,
+            height: user.height,
+            photo: user.photo,
+            type: user.type,
+            points:newPoints
+
+        }
+        this.users= this.users.map(user=>user.id==usernew.id?usernew:user)
+        this._persist()
+    }
+
 }

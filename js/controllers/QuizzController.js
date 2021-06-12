@@ -25,7 +25,7 @@ export default class QuizzController {
         const quizzes = this.QuizzModel.getQuizzes()
         let filteredQuizzes = []
         for (const question of quizzes) {
-            if (question.nivel == level);{
+            if (question.nivel == level){
                 filteredQuizzes.push(question)
             }
             

@@ -58,4 +58,10 @@ export default class UserController {
         this.userModel.editProfile(username, email, password, gender , birthday, photo, adress ,type,status)
         
     }
+
+    addPoints(points) {
+        this.userModel.addPoints(points)
+        
+    }
+
 }

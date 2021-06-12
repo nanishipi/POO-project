@@ -1,9 +1,11 @@
 import QuizzController from '../controllers/QuizzController.js'
+import UserController from '../controllers/UserController.js'
 
 export default class QuestionView {
 
     constructor() {
         this.quizzController = new QuizzController()
+        this.userController = new UserController()
 
         // Catalog
         /*  this.catalog = document.querySelector("#myCatalog") */
@@ -53,6 +55,9 @@ export default class QuestionView {
         return html
     }
 
+    redirect() {
+        location.href = "quizzes.html";
+    }
 
     checkSubmition() {
 
@@ -60,21 +65,63 @@ export default class QuestionView {
             event.preventDefault();
 
             let correct_questions = 0;
+            let points = 0
             let filteredQuizzes = this.quizzController.getQuizzes(this.level);
+
             /* for (let i = 0; i <= filteredQuizzes.length; i++) { */
 
-                for (const question of filteredQuizzes) {
-                    /* alert(question.pergunta) */
-                    const answer = document.querySelector(`input[name="${question.id}"]:checked`)
-                    if (answer.value == question.resposta) {
-                        correct_questions++
-                    }
-                   
+            for (const question of filteredQuizzes) {
+                /* alert(question.pergunta) */
+                const answer = document.querySelector(`input[name="${question.id}"]:checked`)
+
+
+                if (answer.value == question.resposta) {
+                    points = question.pontos
+                    correct_questions++
+
                 }
 
+            }
 
-          /*   } */
-            console.log(correct_questions * 5);
+            let totalPoints = points * correct_questions
+
+         if (correct_questions != 0) {
+                swal({
+                    title: "Parabéns recebeste " + totalPoints + " pontos!",
+
+                    text: "Acertaste " + correct_questions + "/" + filteredQuizzes.length + " perguntas!",
+                    icon: "success",
+                    buttons:
+                    {
+
+                        confirm: {
+                            text: "OK",
+                            visible: true,
+                            closeModal: false
+                        }
+                    },
+                    
+
+
+
+
+                }).then((confirm) => {
+                    if (confirm) {
+                        this.userController.addPoints(totalPoints)
+                        setTimeout(() => this.redirect() ,500);
+                        
+                    } 
+                })
+            }
+            else {
+
+                swal({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'ERRASTE TUDO!',
+
+                })
+            }
 
 
         })

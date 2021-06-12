@@ -86,7 +86,50 @@ class App {
             imagem:"https://png.pngtree.com/png-vector/20200404/ourlarge/pngtree-corona-virus-covid-19-cartoon-illustration-png-image_2174359.jpg",
             
 
-        }
+        },
+        {
+            id: 4,
+            pergunta: "O que é um virus?",
+            opcao1: "Doença",
+            opcao2: "Sentimento",
+            opcao3: "Jogo",
+            opcao4: "Desporto",
+            resposta: "Doença",
+            pontos: 10 ,
+            nivel:2,
+            imagem:"https://images.vexels.com/media/users/3/193297/isolated/preview/4752adfc1ac1732ee4ebb62297016c15-iacute-cone-de-desenho-animado-da-covid-19-by-vexels.png",
+            
+
+        },
+        {
+            id: 5,
+            pergunta: "Qual é a melhor marca?",
+            opcao1: "Samsung",
+            opcao2: "Sony",
+            opcao3: "Apple",
+            opcao4: "Huawei",
+            resposta: "Apple",
+            pontos: 15 ,
+            nivel:3,
+            imagem:"https://images.vexels.com/media/users/3/193297/isolated/preview/4752adfc1ac1732ee4ebb62297016c15-iacute-cone-de-desenho-animado-da-covid-19-by-vexels.png",
+            
+
+        },
+        {
+            id: 6,
+            pergunta: "De que cor é a banana?",
+            opcao1: "Amarelo",
+            opcao2: "Vermelho",
+            opcao3: "Azul",
+            opcao4: "Verde",
+            resposta: "Amarelo",
+            pontos: 5 ,
+            nivel:1,
+            imagem:"https://images.vexels.com/media/users/3/193297/isolated/preview/4752adfc1ac1732ee4ebb62297016c15-iacute-cone-de-desenho-animado-da-covid-19-by-vexels.png",
+            
+
+        },
+
             
         
         ]
