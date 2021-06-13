@@ -33,7 +33,7 @@ export default class UserModel {
 
     block(username){
         this.users.filter(user => user.username = username)
-        sessionStorage.setItem('userStatus', false)
+        localStorage.setItem('userStatus', false)
         this._persist()
     }
 
