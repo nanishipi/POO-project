@@ -10,45 +10,33 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/navbar.css">
-    <link rel="stylesheet" type="text/css" href="../css/admin.css">
+    <link rel="stylesheet" type="text/css" href="../css/quizzes.css">
 </head>
 
 <body>
     <!--NavBar-->
     <nav id="sidenav" class="nav flex-column">
-        <img src="../images/Logo CoviLearn.png" style="height: 120px; width: 240px;">
-        <br><br>
-        <a class="nav-link" href="admin.html"><i class="fas fa-home"></i>Dashboard</a>
-        <a class="nav-link" href="quizzesAdmin.html"><i class="fas fa-tasks"></i>Quizzes</a>
-        <a class="nav-link" href="usersAdmin.html"><i class="fas fa-user-circle"></i>Utilizadores</a>
-        <a class="nav-link" href="../index.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
-    </nav>
+      <img src="../images/Logo CoviLearn.png" style="height: 120px; width: 240px;">
+      <br><br>
+      <a class="nav-link" href="admin.html"><i class="fas fa-home"></i>Dashboard</a>
+      <a class="nav-link" href="quizzesAdmin.html"><i class="fas fa-tasks"></i>Quizzes</a>
+      <a class="nav-link" href="usersAdmin.html"><i class="fas fa-user-circle"></i>Utilizadores</a>
+      <a class="nav-link" href="../index.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
+  </nav>
     <!--End of NavBar-->
-    <div class="col-md-12" style="text-align: center; padding-top: 5%; padding-left: 10%;">
-      
-    <h1 >DashBoard</h1>
-</div>
+
     <!--Stats Zone-->
-    <div class="card-deck row">
-        <div class="card">
-            <img class="card-img-top" id="seeUsers" src="../images/kids.jpg" alt="Users" height="250px" width="300px">
-            <div class="card-body">
-                <h5 class="card-title">Utilizadores</h5>
-                <p class="card-text" id="allUsers">0</p>
-            </div>
-        </div>
-      
-        <div class="card">
-            <img class="card-img-top" id="seeQuizzes" src="../images/activities.jpg" alt="Quizzes" height="250px" width="300px">
-            <div class="card-body">
-                <h5 class="card-title">Quizzes</h5>
-                <p class="card-text" id="allQuizzes">0</p>
-            </div>
-        </div>
+    <div class="col-md-12" style="text-align: center; padding-top: 5%; padding-left: 10%;">
+        <h1>Utilizadores</h1>
+        
+    </div>
+    <div id="catalog">
     </div>
     <!--End of Stats Zone-->
+
     <script type="module" src="../js/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -58,7 +46,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
+       
 </body>
 
 

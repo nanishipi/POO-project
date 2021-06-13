@@ -14,6 +14,13 @@ body {
     margin: 20px;
     width: 28%;
     height: 28%;
+    position: relative;
+    left: 25vh;
+    top: -150px;
+}
+
+.title{
+    padding-left: 5%;
 }
 
 .card-title {

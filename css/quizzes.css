@@ -90,7 +90,7 @@ color: white;
     top: 10vh;
 }
 
-#quizzTable{
+#Table{
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-size: 25px;
     width: 70%;
@@ -100,25 +100,21 @@ color: white;
     background: linear-gradient(to left, #3494e6, #D741A7);
   }
   
-  #quizzTable td, #quizzTable th {
+  #Table td, #Table th {
     border: 2px solid #ddd;
     padding: 1px;
     height: 60px;
     width: 30px;
   }
 
-  #quizzTable th {
+  #Table th {
     
     text-align: center;
      background-color: #ab48e4; 
      color: white; 
   }
 
-  .remove{
-
-    
-
-  }
+ 
 .card-text {
     text-align: center;
     font-size: 20px;

@@ -74,7 +74,7 @@ export default class UserView {
                 if (sessionStorage.getItem("userStatus") === "true") {
                     this.displayLoginMessage('User logged in with success!', 'success');
                     if (sessionStorage.getItem("userType") === "user") {
-                        LoadPage = "html/users.homepage.html"
+                        LoadPage = "html/homepage.html"
                     } else {
                         LoadPage = "html/admin.html"
                     }

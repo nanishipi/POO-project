@@ -52,7 +52,7 @@ export default class QuizzView {
     let result = ''
     if (quizzes.length != 0) {
         result = `
-        <table id="quizzTable" class="info text-center"><tr><th>Pergunta</th><th>Nível</th><th>Pontos</th><th>Ações</th></tr>
+        <table id="Table" class="info text-center"><tr><th>Pergunta</th><th>Nível</th><th>Pontos</th><th>Ações</th></tr>
         `
     } else {
         result = `<p class="info">Without any quizzes!</p>`
@@ -64,7 +64,7 @@ export default class QuizzView {
         <td>${question.pergunta}</td>
         <td>${question.nivel}</td>
         <td>${question.pontos}</td>
-        <td><button id='${question.id}' class='btn btn-danger m-2 remove'>REMOVE</button></td>
+        <td><button id='${question.id}' class='btn btn-danger m-2 remove'>REMOVER</button></td>
         </tr>
         `
     }
