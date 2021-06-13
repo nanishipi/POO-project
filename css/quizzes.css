@@ -29,50 +29,11 @@ body {
 
 .card-deck {
     padding-left: 20%;
-    padding-top: 3%;
+    padding-top: 13%;
     width: 100%;
 }
 
-.quizzButton {
-    position: relative;
-    left: 100vh;
-    top: 20vh;
-    margin-bottom: 25vh;
-    border-radius: 30px;
-    width: 150px;
-    height: 40px;
+i {
+    color: #F2CD5D;
+    padding-right: 10px;
 }
-
-#cardImg{
-
-    width: 10rem;
-    height: 10rem;
-    position: relative;
-    left: -10vh;
-    top: 12vh;
-}
-
-.card label {
-    position: relative;
-    color: #bb198a;
-    font-family: "Poppins", sans-serif;
-    font-size: 20px;
-    border: 2px solid #d6c915;
-    border-radius: 5px;
-    width: 300px;
-    height: 50px;
-    padding: 20px 5px;
-    margin: 10px;
-    top: -10vh;
-    left: 35vh;
-  }
-
-
-input[type="radio"] {
-    display: none;
-  }
-
-input[type="radio"]:checked + label {
-    background-color: #d1c51e;
-    color: white;
-  }

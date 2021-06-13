@@ -10,28 +10,28 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/navbar.css">
-    <link rel="stylesheet" type="text/css" href="/css/admin.css">
+    <link rel="stylesheet" type="text/css" href="/css/user.css">
 </head>
 
 <body>
     <!--NavBar-->
     <nav id="sidenav" class="nav flex-column">
-      <img src="../images/Logo CoviLearn.png" style="height: 120px; width: 240px;">
-      <br><br>
-      <a class="nav-link" href="users.homepage.html"><i class="fas fa-home"></i>Menu</a>
-      <a class="nav-link" href="ranking.html"><i class="fas fa-medal"></i>Ranking & Stats</a>
-      <a class="nav-link" href="jogo.html"><i class="fas fa-gamepad"></i>Game</a>
-      <a class="nav-link" href="quizzes.html"><i class="fas fa-tasks"></i>Quizzes</a>
-      <a class="nav-link" href="perfil.html"><i class="fas fa-user-circle"></i>Perfil</a>
-      <a class="nav-link" href="../index.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
-  </nav>
+        <img src="../images/Logo CoviLearn.png" style="height: 120px; width: 240px;">
+        <br><br>
+        <a class="nav-link" href="users.homepage.html"><i class="fas fa-home"></i>Menu</a>
+        <a class="nav-link" href="ranking.html"><i class="fas fa-medal"></i>Ranking & Stats</a>
+        <a class="nav-link" href="jogo.html"><i class="fas fa-gamepad"></i>Game</a>
+        <a class="nav-link" href="quizzes.html"><i class="fas fa-tasks"></i>Quizzes</a>
+        <a class="nav-link" href="perfil.html"><i class="fas fa-user-circle"></i>Perfil</a>
+        <a class="nav-link" href="../index.html"><i class="fas fa-sign-out-alt"></i>Logout</a>
+    </nav>
     <!--End of NavBar-->
 
     <!--Stats Zone-->
     <div class="container row">
         <div class="col-md-12">
             <h1 style="text-align: center; padding-bottom: 30px;">Users</h1>
-            <table class="table table-dark">
+            <table id="usersTable" class="table table-dark">
                 <thead>
                   <tr>
                     <th scope="col">Username</th>
