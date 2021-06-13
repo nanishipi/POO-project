@@ -30,9 +30,9 @@ export default class UserModel {
         this.users = this.users.filter(user => user.username != username)
         this._persist()
     }
-    
+
     block(username){
-        this.users = this.users.filter(user => user.username != username)
+        this.users.filter(user => user.username = username)
         sessionStorage.setItem('userStatus', false)
         this._persist()
     }
