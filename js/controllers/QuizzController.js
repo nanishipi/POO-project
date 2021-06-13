@@ -37,7 +37,7 @@ export default class QuizzController {
     }
 
     removeQuizz(id) {
-        this.QuizzModel.remove(id)
+        this.QuizzModel.removeQuizz(id)
     }
 
 

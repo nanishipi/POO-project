@@ -1,6 +1,8 @@
 import UserView from './views/UserView.js'
 import QuizzView from './views/QuizzView.js'
 import QuestionView from './views/question.view.js';
+import addQuestionView from './views/addQuestionView.js';
+import adminQuizzView from './views/adminQuizzView.js';
 
 
 
@@ -16,6 +18,13 @@ class App {
             ],
             'question':[
                 QuestionView
+            ],
+            'quizzesAdmin':[
+                adminQuizzView
+            ],
+            'addQuiz':[
+                addQuestionView
+                
             ]
         };
 
