@@ -1,10 +1,10 @@
 body {
-    background-color: #E4E4E4;
+    background: linear-gradient(to left, #3494e6, #D741A7);
 }
 
 .container {
     padding-left: 25%;
-    padding-top: 5%;
+    padding-top: 15%;
 }
 
 .card {
@@ -12,29 +12,26 @@ body {
     transition: 0.3s;
     border-radius: 20px;
     margin: 20px;
-    width: 60%;
-    height: 35%;
-    position: relative;
-    left: 50vh;
-    top: 15vh;
+    width: 28%;
+    height: 28%;
 }
 
 .card-title {
-    position: relative;
-    left: 33vh;
-    top: -15vh;
     text-align: center;
+    font-family: Bubblegum Sans;
+    font-size: 30px;
 }
 
-.title{
-
-    position: relative;
-    font-size: 5rem;
-    top: 10vh;
-    left: 15vh;
+.card-text {
     text-align: center;
+    font-size: 20px;
 }
 
+.card-deck {
+    padding-left: 20%;
+    padding-top: 3%;
+    width: 100%;
+}
 
 .quizzButton {
     position: relative;

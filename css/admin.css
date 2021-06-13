@@ -1,5 +1,5 @@
 body {
-    background-color: #E4E4E4;
+    background: linear-gradient(to left, #3494e6, #D741A7);
 }
 
 .container {
@@ -18,13 +18,17 @@ body {
 
 .card-title {
     text-align: center;
+    font-family: Bubblegum Sans;
+    font-size: 30px;
 }
 
 .card-text {
     text-align: center;
+    font-size: 20px;
 }
 
-#card-image {
-    
+.card-deck {
+    padding-left: 20%;
+    padding-top: 13%;
+    width: 100%;
 }
-
