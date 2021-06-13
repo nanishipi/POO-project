@@ -119,3 +119,18 @@ color: white;
     
 
   }
+.card-text {
+    text-align: center;
+    font-size: 20px;
+}
+
+.card-deck {
+    padding-left: 20%;
+    padding-top: 13%;
+    width: 100%;
+}
+
+i {
+    color: #F2CD5D;
+    padding-right: 10px;
+}
