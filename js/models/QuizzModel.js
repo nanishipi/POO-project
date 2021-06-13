@@ -9,7 +9,7 @@ export default class QuizzModel {
 
     create(pergunta, opcao1, opcao2, opcao3 , opcao4, resposta, pontos , nivel, imagem) {
         const quizz = {
-            id: this.quizzes.length > 0 ? this.quizzes[this.users.length - 1].id + 1 : 1,
+            id: this.quizzes.length > 0 ? this.quizzes[this.quizzes.length - 1].id + 1 : 1,
             pergunta: pergunta,
             opcao1: opcao1,
             opcao2: opcao2,
