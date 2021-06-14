@@ -1,8 +1,38 @@
+body {
+    background: linear-gradient(to left, #3494e6, #D741A7);
+}
+
 .form {
-    padding: 15% 0px 0px 25%;
+    padding: 5% 0px 0px 25%;
     margin: 20px;
 }
 
 div {
-    margin: 20px;
+    margin: 15px;
+}
+
+input {
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    width: 260px;
+    height: 35px;
+}
+
+label {
+    font-size: 25px;
+    font-family: Bubblegum Sans;
+    padding-bottom: 10px;
+}
+
+#editBtn {
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    width: 200px;
+    height: 35px;
+    font-family: Bubblegum Sans;
+    font-size: 25px;
+    background-color: #3A1772;
+    color: #D741A7;
 }
