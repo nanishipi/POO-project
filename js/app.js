@@ -1,9 +1,9 @@
-import UserView from './views/UserView.js'
-import QuizzView from './views/QuizzView.js'
+import UserView from './views/UserView.js';
+import QuizzView from './views/QuizzView.js';
 import QuestionView from './views/question.view.js';
 import addQuestionView from './views/addQuestionView.js';
 import adminQuizzView from './views/adminQuizzView.js';
-
+import ProfileView from './views/ProfileView.js';
 
 
 class App {
@@ -24,7 +24,10 @@ class App {
             ],
             'addQuiz':[
                 addQuestionView
-                
+            ],
+            'profile':[
+                ProfileView,
+                UserView
             ]
         };
 

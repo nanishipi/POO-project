@@ -7,11 +7,9 @@ export default class adminView {
         this.usersTable = document.getElementById('usersTable')
         this.deleteUser = document.getElementById('removeBtn')
         this.blockUser = document.getElementById('blockBtn')
-        this.editUser = document.getElementById('editBtn')
 
         this.bindRemoveUser()
         this.bindBlockUser()
-        this.bindEditUser()
         this.bindLogout()
     }
 
@@ -48,17 +46,5 @@ export default class adminView {
             },
                 1000)
         })
-    }
-
-    bindEditUser() {
-        this.editUser.addEventListener("click", event => {
-            if (confirm(`Sure to edit: ${this.userController.getById(sessionStorage.getItem('selectedUser')).username}`)) {
-                this.userModel.editProfile(sessionStorage.getItem('selectedUser'))
-            }
-        })
-        setTimeout(() => {
-            window.location.href = "admin.html";
-        },
-            1000)
     }
 }
