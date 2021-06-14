@@ -67,21 +67,24 @@ export default class UserView {
         this.loginForm.addEventListener('submit', event => {
             event.preventDefault();
 
-            try {
+            try {    
                 this.userController.loginUser(this.loginUsername.value, this.loginPassword.value);
 
                 let LoadPage;
-                if (sessionStorage.getItem("userStatus") === "true") {
+                if (sessionStorage.getItem("userStatus") === "false") {
+                    alert("You are blocked!")
+                    LoadPage = "index.html"
+                  
+
+                } else {
+
                     this.displayLoginMessage('User logged in with success!', 'success');
                     if (sessionStorage.getItem("userType") === "user") {
                         LoadPage = "html/homepage.html"
                     } else {
                         LoadPage = "html/admin.html"
                     }
-
-                } else {
-                    alert("You are blocked!")
-                    LoadPage = "index.html"
+                   
                 }
 
                 // Wait 1 second before reloading, so the user can see the login success message    
