@@ -25,7 +25,7 @@ class App {
             'addQuiz':[
                 addQuestionView
             ],
-            'profile':[
+            'perfil':[
                 ProfileView,
                 UserView
             ]

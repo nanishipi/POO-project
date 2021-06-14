@@ -19,6 +19,7 @@ export default class UserController {
             this.userCompare = JSON.parse(localStorage.getItem('users'))
             for (let i = 0; i <= [this.userModel.users.length - 1]; i++) {
                 if (this.userCompare[i].username === sessionStorage.getItem('loggedUser')) {
+                    sessionStorage.setItem('userName', this.userNameLogged = JSON.parse(localStorage.getItem('users'))[i].username)
                     sessionStorage.setItem('userPhoto', this.userPhotoLink = JSON.parse(localStorage.getItem('users'))[i].photo);
                     sessionStorage.setItem('userType', this.userType = JSON.parse(localStorage.getItem('users'))[i].type)
                     sessionStorage.setItem('userStatus', this.userStatus = JSON.parse(localStorage.getItem('users'))[i].status)
