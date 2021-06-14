@@ -5,7 +5,7 @@ import addQuestionView from './views/addQuestionView.js';
 import adminQuizzView from './views/adminQuizzView.js';
 import adminUserView from './views/adminUserView.js';
 import adminView from './views/adminView.js';
-
+import homeView from './views/homeView.js';
 import ProfileView from './views/ProfileView.js';
 
 
@@ -37,6 +37,9 @@ class App {
             ],
             'perfil':[
                 ProfileView
+            ],
+            'homepage':[
+                homeView
             ]
         };
 
