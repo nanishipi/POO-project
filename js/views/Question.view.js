@@ -102,9 +102,6 @@ export default class QuestionView {
                     },
                     
 
-
-
-
                 }).then((confirm) => {
                     if (confirm) {
                         this.userController.addPoints(totalPoints)
