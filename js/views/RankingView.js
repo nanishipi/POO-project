@@ -8,30 +8,32 @@ export default class RankingView {
         this.userModel = new UserModel()
 
        this.userCatalog = document.getElementById('catalog')
-        this.renderCatalog(this.userModel.getAll())
+        this.renderCatalog()
     }
 
-   renderCatalog(users = []) {
+   renderCatalog() {
+       let sortedUsers = this.userModel.getAll().sort((a,b) => (a.points > b.points) ? -1 : ((b.points > a.points) ? 1 : 0))
+       console.log(sortedUsers);
     let result = ''
-    if (users.length != 0) {
+    if (sortedUsers.length != 0) {
         result = `
-        <table id="Table" class="info text-center"><tr><th>Nome</th><th>Atividades Completas</th><th>Quizzes Completos</th><th>Pontos</th></tr>
+        <table id="Table" class="info text-center"><tr><th>Name</th><th>Games Played</th><th>Quizzes Played</th><th>Points</th></tr>
         `
     } else {
-        result = `<p class="info">Sem utilizadores!</p>`
+        result = `<p class="info">Without Users!</p>`
     }
 
-    for (const user of users) {
+    for (const user of sortedUsers) {
         
         result += `                
         <td>${user.username}</td>
         <td>Atividades</td>
-        <td>Quizzes</td>
+        <td>${user.quizzesPlayed}</td>
         <td>${user.points}</td>
         </tr>
         `
     }
-    result += `</table>`
+    result += `</table>`   
     this.userCatalog.innerHTML = result
 }
 }

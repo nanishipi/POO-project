@@ -8,6 +8,7 @@ import adminView from './views/adminView.js';
 import homeView from './views/homeView.js';
 import ProfileView from './views/ProfileView.js';
 import RankingView from './views/RankingView.js';
+import logoutView from './views/logoutView.js';
 
 
 class App {
@@ -15,35 +16,45 @@ class App {
         this.routes = {
             'index': [
                 UserView,
+                logoutView
             ],
             'quizzes': [
                 
-                QuizzView
+                QuizzView,
+                logoutView
             ],
             'question':[
-                QuestionView
+                QuestionView,
+                logoutView
             ],
             'quizzesAdmin':[
-                adminQuizzView
+                adminQuizzView,
+                logoutView
             ],
             'addQuiz':[
-                addQuestionView
+                addQuestionView,
+                logoutView
                 
             ],
             'usersAdmin':[
-                adminUserView
+                adminUserView,
+                logoutView
             ],
             'admin':[
-                adminView
+                adminView,
+                logoutView
             ],
             'perfil':[
-                ProfileView
+                ProfileView,
+                logoutView
             ],
             'homepage':[
-                homeView
+                homeView,
+                logoutView
             ],
             'ranking':[
-                RankingView
+                RankingView,
+                logoutView
             ]
         };
 

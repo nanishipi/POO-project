@@ -65,4 +65,9 @@ export default class UserController {
         
     }
 
+    addQuizzesPlayed(quizzes) {
+        this.userModel.addQuizzesPlayed(quizzes)
+        
+    }
+
 }

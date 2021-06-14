@@ -87,9 +87,9 @@ export default class QuestionView {
 
          if (correct_questions != 0) {
                 swal({
-                    title: "Parabéns recebeste " + totalPoints + " pontos!",
+                    title: "Congrats, you got " + totalPoints + " points!",
 
-                    text: "Acertaste " + correct_questions + "/" + filteredQuizzes.length + " perguntas!",
+                    text: correct_questions + "/" + filteredQuizzes.length + " right answers!",
                     icon: "success",
                     buttons:
                     {
@@ -105,6 +105,7 @@ export default class QuestionView {
                 }).then((confirm) => {
                     if (confirm) {
                         this.userController.addPoints(totalPoints)
+                        this.userController.addQuizzesPlayed(1)
                         setTimeout(() => this.redirect() ,500);
                         
                     } 
@@ -115,7 +116,7 @@ export default class QuestionView {
                 swal({
                     icon: 'error',
                     title: 'Oops...',
-                    text: 'ERRASTE TUDO!',
+                    text: 'Missed All!',
 
                 })
             }

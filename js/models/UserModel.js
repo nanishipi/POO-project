@@ -21,6 +21,7 @@ export default class UserModel {
             type:type,
             status:status,
             points:0,
+            quizzesPlayed:0,
         }
         this.users.push(user);
         this._persist();
@@ -44,6 +45,10 @@ export default class UserModel {
     logout() {
         sessionStorage.removeItem('loggedUser');
         sessionStorage.removeItem("userPhoto");
+        sessionStorage.removeItem('level');
+        sessionStorage.removeItem("userStatus");
+        sessionStorage.removeItem('userName');
+        sessionStorage.removeItem("userType");
     }
 
     isLogged() {
@@ -77,6 +82,7 @@ export default class UserModel {
             type:type,
             status:status,
             points:currentUser.points,
+            quizzesPlayed: currentUser.quizzesPlayed
         }
         
         this.users= this.users.map(user=>user.id==currentUser.id?UserNew:user)
@@ -99,7 +105,32 @@ export default class UserModel {
             height: user.height,
             photo: user.photo,
             type: user.type,
-            points:newPoints
+            points:newPoints,
+            quizzesPlayed: user.quizzesPlayed
+
+        }
+        this.users= this.users.map(user=>user.id==usernew.id?usernew:user)
+        this._persist()
+    }
+
+    addQuizzesPlayed(quizzes){
+        const user = this.getCurrentUser()
+        let newQuizzes =user.quizzesPlayed + quizzes
+        const usernew={
+            id:user.id,
+            email:user.email,
+            username:user.username,
+            password:user.password,
+            location:user.location,
+            genre: user.genre,
+            weight: user.weight,
+            birthDate: user.birthDate,
+            aboutUser: user.aboutUser,
+            height: user.height,
+            photo: user.photo,
+            type: user.type,
+            points: user.points,
+            quizzesPlayed: newQuizzes
 
         }
         this.users= this.users.map(user=>user.id==usernew.id?usernew:user)
