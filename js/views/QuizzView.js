@@ -7,9 +7,9 @@ export default class QuizzView {
 
         // Catalog
         /*  this.catalog = document.querySelector("#myCatalog") */
-        this.btnPlay1 = document.getElementById('quizzButton1')
-        this.btnPlay2 = document.getElementById('quizzButton2')
-        this.btnPlay3 = document.getElementById('quizzButton3')
+        this.btnQuizz1 = document.getElementById('1')
+        this.btnQuizz2 = document.getElementById('2')
+        this.btnQuizz3 = document.getElementById('3')
 
 
         this.Play()
@@ -17,7 +17,7 @@ export default class QuizzView {
 
 
     Play() {
-        this.btnPlay1.addEventListener('click', event => {
+        this.btnQuizz1.addEventListener('click', event => {
             event.preventDefault();
             
             sessionStorage.setItem('level',1)
@@ -28,7 +28,7 @@ export default class QuizzView {
                 1000);
         })
 
-        this.btnPlay2.addEventListener('click', event => {
+        this.btnQuizz2.addEventListener('click', event => {
             event.preventDefault();
             
             sessionStorage.setItem('level',2)
@@ -39,7 +39,7 @@ export default class QuizzView {
                 1000);
         })
 
-        this.btnPlay3.addEventListener('click', event => {
+        this.btnQuizz3.addEventListener('click', event => {
             event.preventDefault();
             
             sessionStorage.setItem('level',3)
