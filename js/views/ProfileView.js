@@ -16,6 +16,7 @@ export default class ProfileView {
         this.editBtn = document.getElementById('editBtn')
 
         this.bindEditUserForm()
+        this.bindgetUserInfo() 
     }
 
     bindEditUserForm() {
@@ -58,5 +59,26 @@ export default class ProfileView {
                 }
             })
         })
+    }
+
+    bindgetUserInfo() {
+        let loggeduser = this.userController.userModel.getAll().filter(user => user.email == sessionStorage.getItem('loggedUser'))[0]
+        console.log(loggeduser);
+
+        this.username.innerHTML += loggeduser.username
+        this.email.innerHTML += loggeduser.email
+        this.gender.innerHTML += loggeduser.gender
+        this.adress.innerHTML += loggeduser.adress
+        this.birthdate.innerHTML += loggeduser.birthday
+
+        let users = this.userController.userModel.getAll().filter(user => user.type == "user").sort(function (a, b) { return parseInt(b.points) - parseInt(a.points) })
+        if (users.length>=3) {
+            this.third.innerHTML=users[2].username
+            this.imgThird.scr=users[2].photo
+            this.second.innerHTML=users[1].username
+            this.imgSecond.src=users[1].photo
+            this.first.innerHTML=users[0].username
+            this.imgFirst.src=users[0].photo    
+        }
     }
 }
