@@ -5,8 +5,8 @@ import addQuestionView from './views/addQuestionView.js';
 import adminQuizzView from './views/adminQuizzView.js';
 import adminUserView from './views/adminUserView.js';
 import adminView from './views/adminView.js';
-
 import ProfileView from './views/ProfileView.js';
+import RankingView from './views/RankingView.js';
 
 
 class App {
@@ -37,6 +37,9 @@ class App {
             ],
             'perfil':[
                 ProfileView
+            ],
+            'ranking':[
+                RankingView
             ]
         };
 
