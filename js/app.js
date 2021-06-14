@@ -36,8 +36,7 @@ class App {
                 adminView
             ],
             'perfil':[
-                ProfileView,
-                UserView
+                ProfileView
             ]
         };
 
