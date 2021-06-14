@@ -7,6 +7,7 @@ import adminUserView from './views/adminUserView.js';
 import adminView from './views/adminView.js';
 import homeView from './views/homeView.js';
 import ProfileView from './views/ProfileView.js';
+import RankingView from './views/RankingView.js';
 
 
 class App {
@@ -40,6 +41,9 @@ class App {
             ],
             'homepage':[
                 homeView
+            ],
+            'ranking':[
+                RankingView
             ]
         };
 
