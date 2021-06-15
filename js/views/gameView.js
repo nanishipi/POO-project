@@ -28,14 +28,19 @@ export default class gameView {
     flipCard() {
 
       
-
-         if (this.lockBoard) return;
-        if (this === this.firstCard) return;
+  if (this.lockBoard) return;
+        if (this === this.firstCard) return; 
 
 
         this.classList.add('flip');
 
+
+        console.log(this.hasFlippedCard);
+        console.log(this.lockBoard);
         
+       
+       
+       
         if (!this.hasFlippedCard) {
             // first click
 

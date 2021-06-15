@@ -11,6 +11,14 @@
     background: linear-gradient(to left, #3494e6, #D741A7);
   }
   
+
+.text{
+
+position: relative;
+left: 50%;
+top: 5%;
+
+}
   .memory-game {
     width: 850px;
     height: 650px;
@@ -20,7 +28,7 @@
     perspective: 1000px;
     position: relative;
     top: 10%;
-    left: 5%;
+    left: 1%;
   }
   
   .memory-card {

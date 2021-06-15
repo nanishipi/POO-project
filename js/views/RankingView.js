@@ -21,7 +21,7 @@ export default class RankingView {
     let result = ''
     if (sortedUsers.length != 0) {
         result = `
-        <table id="Table" class="info text-center"><tr><th>Name</th><th>Games Played</th><th>Quizzes Played</th><th>Points</th></tr>
+        <table id="Table" class="info text-center"><tr><th>Name</th><th>Quizzes Played</th><th>Points</th></tr>
         `
     } else {
         result = `<p class="info">Without Users!</p>`
@@ -31,7 +31,6 @@ export default class RankingView {
         
         result += `                
         <td>${user.username}</td>
-        <td>Atividades</td>
         <td>${user.quizzesPlayed}</td>
         <td>${user.points}</td>
         </tr>
