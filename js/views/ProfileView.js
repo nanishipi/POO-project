@@ -90,7 +90,7 @@ export default class ProfileView {
             this.claimbtn2.disabled = true;
         }
 
-        if (loggeduser[0].quizzesPlayed >= 1) {
+        if (loggeduser[0].gamesPlayed >= 2) {
             this.claimbtn1.disabled = false;
         }
         else {

@@ -68,6 +68,12 @@ export default class UserController {
         this.userModel.addQuizzesPlayed(quizzes)
         
     }
+
+    addGamesPlayed(games) {
+        this.userModel.addGamesPlayed(games)
+        
+    }
+
     addAvatar(avatar){
         this.userMode.addAvatar(avatar)
     }

@@ -114,6 +114,7 @@ class App {
                 status:'true',
                 points:25,
                 quizzesPlayed:4,
+                gamesPlayed:3
             },
             {
                 id: 3,
@@ -128,6 +129,7 @@ class App {
                 status:'true',
                 points:35,
                 quizzesPlayed:2,
+                gamesPlayed:1
             },
             {
                 id: 4,
@@ -142,6 +144,7 @@ class App {
                 status:'true',
                 points: 50,
                 quizzesPlayed:1,
+                gamesPlayed:5
             },
         ]
 

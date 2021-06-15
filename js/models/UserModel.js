@@ -27,6 +27,7 @@ export default class UserModel {
             status:status,
             points:0,
             quizzesPlayed:0,
+            gamesPlayed:0
         }
         this.users.push(user);
         this._persist();
@@ -84,10 +85,9 @@ export default class UserModel {
             birthday: birthday,
             photo: photo,
             adress:adress,
-            type:type,
+            type: type,
             status:status,
-            points:currentUser.points,
-            quizzesPlayed: currentUser.quizzesPlayed
+
         }
         
         this.users= this.users.map(user=>user.id==currentUser.id?UserNew:user)
@@ -109,7 +109,8 @@ export default class UserModel {
             type: user.type,
             status: user.status,
             points: newPoints,
-            quizzesPlayed: user.quizzesPlayed
+            quizzesPlayed: user.quizzesPlayed,
+            gamesPlayed:user.gamesPlayed
         }
         this.users= this.users.map(user=> {
             if(user.id==usernew.id){
@@ -138,7 +139,31 @@ export default class UserModel {
             type: user.type,
             status: user.status,
             points: user.points,
-            quizzesPlayed: newQuizzes
+            quizzesPlayed: newQuizzes,
+            gamesPlayed:user.gamesPlayed,
+
+        }
+        this.users= this.users.map(user=>user.id==usernew.id?usernew:user)
+        this._persist()
+    }
+
+    addGamesPlayed(games){
+        const user = this.getCurrentUser()
+        let newGames =user.gamesPlayed + games
+        const usernew={
+            id:user.id,
+            username: user.username,
+            email: user.email,
+            password: user.password,
+            gender: user.gender,
+            birthday: user.birthday,
+            photo: user.photo,
+            adress: user.adress,
+            type: user.type,
+            status: user.status,
+            points: user.points,
+            quizzesPlayed: user.quizzesPlayed,
+            gamesPlayed: newGames
         }
         this.users= this.users.map(user=>user.id==usernew.id?usernew:user)
         this._persist()

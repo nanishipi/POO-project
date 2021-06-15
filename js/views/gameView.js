@@ -98,6 +98,11 @@ export default class gameView {
         isMatch ? this.disableCards() : this.unflipCards();
     }
 
+redirect(){
+
+    location.href="jogo.html"
+
+}
 
     checkGameOver(){
 
@@ -105,19 +110,31 @@ export default class gameView {
         let points = 50
         if(this.cards.length == 12)
         {
-            this.userController.addPoints(points)
+           
             setTimeout(()=>{
 
             swal({
                 title: "Congratulations!!!",
                 text: "You Win " + points + " Points!",
                 icon: "success",       
-           
-        })
-            location.href='jogo.html'
-
-            },1000)
+                buttons:
+                {
+                    confirm: {
+                        text: "OK",
+                        visible: true,
+                        closeModal: false
+                    }
+                },
+            }).then((confirm) => {
+                if (confirm) {
+                    this.userController.addPoints(points)
+                    this.userController.addGamesPlayed(1)
+                    setTimeout(() => this.redirect() ,500);
+                } 
+            })
+            },500)
+        
         }
-
+    
     }
 }
