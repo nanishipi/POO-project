@@ -16,6 +16,7 @@ export default class AdminView {
 
     }
 
+
    BindLogout() {
         this.logout.addEventListener("click", () => {
            

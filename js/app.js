@@ -80,7 +80,22 @@ class App {
         return typeof this.routes[route] === 'undefined' ? [] : this.routes[route];
     }
     _importDataFixtures() {
-        const users = []
+        const users = [
+            {
+                id: 1,
+                username: 'admin',
+                email: 'admin@gmail.com',
+                password: 'admin',
+                gender: '',
+                birthday: '',
+                photo: '',
+                adress:'',
+                type:'admin',
+                status:'true',
+                points:'',
+                quizzesPlayed:'',
+            }
+        ]
 
         const quizzes= [
             
