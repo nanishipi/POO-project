@@ -2,10 +2,16 @@
 export default class UserModel {
     constructor() {
         this.users = localStorage.users ? JSON.parse(localStorage.users) : [];
+        this.images = localStorage.images ? JSON.parse(localStorage.images) : [];
+        console.log(this.images)
     }
 
     getAll() {
         return this.users
+    }
+
+    getAllImages(){
+        return this.images
     }
 
     create(username, email, password, gender , birthday, photo, adress ,type, status) {

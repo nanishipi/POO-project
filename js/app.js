@@ -98,7 +98,6 @@ class App {
         ]
 
         const quizzes= [
-            
         {
             id: 1,
             pergunta: "O que é Covid?",
@@ -183,15 +182,38 @@ class App {
             
 
         },
+        ]
 
-            
-        
+        const images = [
+            {
+                id: 1,
+                src: '../images/hamster.jpg'
+            },
+            {
+                id: 2,
+                src: '../images/elephant.jpg'
+            },
+            {
+                id: 3,
+                src: '../images/sloth.jpg'
+            },
+            {
+                id: 4,
+                src: '../images/koala.jpg'
+            },
+            {
+                id: 5,
+                src: '../images/yeti.jpg'
+            },
         ]
         if (!localStorage.quizzes) {
             localStorage.setItem('quizzes', JSON.stringify(quizzes));
         }
         if (!localStorage.users) {
             localStorage.setItem('users', JSON.stringify(users));
+        }
+        if (!localStorage.images) {
+            localStorage.setItem('images', JSON.stringify(images));
         }
     }
 }

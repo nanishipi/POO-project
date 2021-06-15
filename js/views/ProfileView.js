@@ -36,6 +36,7 @@ export default class ProfileView {
         this.claimbtn2 = document.getElementById('claimBtn2')
         this.claimbtn3 = document.getElementById('claimBtn3')
 
+        this.bindProfilePictureInfo()
         this.bindClaimPoints()
         this.bindEditUserForm()
         this.bindgetUserInfo()
@@ -99,6 +100,25 @@ export default class ProfileView {
             loggeduser.points += 50
             this.claimbtn1.disabled = true
         })
+    }
+
+    bindProfilePictureInfo(){
+        let loggeduser = this.userController.userModel.getAll().filter(user => user.username == sessionStorage.getItem('userName'));
+        if (loggeduser[0].points <= 50) {
+            this.photo.src = this.userModel.getAllImages()[0].src
+        }
+        else if (loggeduser[0].points >= 51 && loggeduser[0].points <= 101) {
+            this.photo.src = this.userModel.getAllImages()[1].src
+        }
+        else if (loggeduser[0].points >= 101 && loggeduser[0].points <= 200) {
+            this.photo.src = this.userModel.getAllImages()[2].src
+        }
+        else if (loggeduser[0].points >= 201 && loggeduser[0].points <= 500) {
+            this.photo.src = this.userModel.getAllImages()[3].src
+        }
+        else if (501 <= loggeduser[0].points) {
+            this.photo.src = this.userModel.getAllImages()[4].src
+        }        
     }
 
     displayEditedMessage(){

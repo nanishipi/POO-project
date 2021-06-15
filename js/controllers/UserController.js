@@ -69,4 +69,7 @@ export default class UserController {
         
     }
 
+    getAllImages(){
+        this.userModel.getAllImages()
+    }
 }

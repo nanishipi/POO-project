@@ -29,8 +29,9 @@
 
     <!--Profile Zone-->
     <div class="form col-md-9">
-        <img src="../images/hamster.jpg" id="photo" alt="Avatar"
-            style="border-radius: 50%; height: 100px; height: 100px;">
+        <img src="" id="photo" alt="Avatar"
+            style="border-radius: 50%; height: 100px; height: 100px;" data-toggle="modal" data-target="#imageInfo">
+        <p>Click to see more about profile pictures</p>
         <div class="file d-flex justify-content-center  mb-3">
             <div class="col-md-6">
                 <label for="username">Username</label><br>
@@ -160,6 +161,21 @@
     </div>
     </div>
     <!--End of Edit Modal-->
+
+    <!--Images Modal-->
+    <div class="modal fade" id="imageInfo" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="col-md-11 text-center">
+                    <h2>Image Info</h2>
+                    <p>Your profile picture will change based on how many points you own</p>
+                    <p>There are 5 pictures in total</p>
+                    <p>Collect Points to Level Up your picture</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 
     <script type="module" src="../js/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
