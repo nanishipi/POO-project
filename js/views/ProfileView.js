@@ -28,9 +28,12 @@ export default class ProfileView {
         this.editBtn = document.getElementById('editBtn')
         this.editModalBtn = document.getElementById('editModalBtn')
 
+        
+
         this.bindEditUserForm()
         this.bindgetUserInfo()
     }
+
 
     bindEditUserForm() {
         this.editModalBtn.addEventListener('click', event => {
@@ -52,6 +55,8 @@ export default class ProfileView {
         this.adress.value += loggeduser[0].adress
         this.birthdate.value += loggeduser[0].birthday
         this.password.value += loggeduser[0].password
+        this.photo.value += loggeduser[0].photo
+
 
         this.modalUsername.value += loggeduser[0].username
         this.modalEmail.value += loggeduser[0].email
@@ -59,6 +64,12 @@ export default class ProfileView {
         this.modalAdress.value += loggeduser[0].adress
         this.modalBirthDate.value += loggeduser[0].birthday
         this.modalPassword.value += loggeduser[0].password
+    }
+
+    getAvatarByPoints(){
+
+
+
     }
 
     displayEditedMessage(){
