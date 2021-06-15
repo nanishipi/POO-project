@@ -9,6 +9,7 @@ import homeView from './views/homeView.js';
 import ProfileView from './views/ProfileView.js';
 import RankingView from './views/RankingView.js';
 import logoutView from './views/logoutView.js';
+import gameView from './views/gameView.js';
 
 
 
@@ -57,6 +58,9 @@ class App {
                 RankingView,
                 logoutView
             ],
+            'jogo':[
+                gameView
+            ]
         
         };
 
