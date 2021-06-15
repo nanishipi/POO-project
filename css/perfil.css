@@ -25,6 +25,13 @@ label {
     padding-bottom: 10px;
 }
 
+#avatarLvl{
+
+position: relative;
+left: 22vh;
+
+}
+
 #editBtn {
     border-radius: 20px;
     outline: none;
