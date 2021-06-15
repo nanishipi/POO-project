@@ -87,7 +87,9 @@ export default class UserModel {
             adress:adress,
             type: type,
             status:status,
-
+            points:currentUser.points,
+            quizzesPlayed: currentUser.quizzesPlayed,
+            gamesPlayed:currentUser.gamesPlayed
         }
         
         this.users= this.users.map(user=>user.id==currentUser.id?UserNew:user)
