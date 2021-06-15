@@ -113,10 +113,10 @@ export default class gameView {
                 text: "You Win " + points + " Points!",
                 icon: "success",       
            
-        },1000)
+        })
             location.href='jogo.html'
 
-            })
+            },1000)
         }
 
     }
