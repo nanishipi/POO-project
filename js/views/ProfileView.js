@@ -1,8 +1,10 @@
 import UserController from '../controllers/UserController.js'
+import UserModel from '../models/UserModel.js'
 
 export default class ProfileView {
     constructor() {
-        this.userController = new UserController();
+        this.userController = new UserController()
+        this.userModel = new UserModel()
 
         //Profile DOM
         this.username = document.getElementById('username')
@@ -20,7 +22,7 @@ export default class ProfileView {
     }
 
     bindEditUserForm() {
-        let loggeduser = this.userController.userModel.getAll().filter(user => user.username == sessionStorage.getItem('loggedUser'))[0]
+        let loggeduser = this.userController.userModel.getAll().filter(user => user.username ==sessionStorage.getItem('userName'));
         this.editBtn.addEventListener('click', event => {
             console.log(loggeduser)
             this.usernameModal.value = loggeduser.username
@@ -62,14 +64,14 @@ export default class ProfileView {
     }
 
     bindgetUserInfo() {
-        let loggeduser = this.userController.userModel.getAll().filter(user => user.email == sessionStorage.getItem('loggedUser'))[0]
-        console.log(loggeduser);
-
-        this.username.innerHTML += loggeduser.username
-        this.email.innerHTML += loggeduser.email
-        this.gender.innerHTML += loggeduser.gender
-        this.adress.innerHTML += loggeduser.adress
-        this.birthdate.innerHTML += loggeduser.birthday
+        let loggeduser = this.userController.userModel.getAll().filter(user => user.username ==sessionStorage.getItem('userName'));
+        console.log(loggeduser)
+        this.username.value += loggeduser[0].username
+        this.email.value += loggeduser[0].email
+        this.gender.value += loggeduser[0].gender
+        this.adress.value += loggeduser[0].adress
+        this.birthdate.value += loggeduser[0].birthday
+        this.password.value += loggeduser[0].password
 
         let users = this.userController.userModel.getAll().filter(user => user.type == "user").sort(function (a, b) { return parseInt(b.points) - parseInt(a.points) })
         if (users.length>=3) {
