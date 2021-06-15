@@ -29,7 +29,8 @@
 
     <!--Profile Zone-->
     <div class="form col-md-9">
-        <img id="photo" alt="Avatar" style="border-radius: 50%; height: 100px; height: 100px;">
+        <img src="../images/hamster.jpg" id="photo" alt="Avatar"
+            style="border-radius: 50%; height: 100px; height: 100px;">
         <div class="file d-flex justify-content-center  mb-3">
             <div class="col-md-6">
                 <label for="username">Username</label><br>
@@ -66,20 +67,30 @@
             </div>
         </div>
     </div>
-    </div>
-    </form>
 
-    <div class="card-deck row">
+    <div id="conquista1" class="card-deck row">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Play the game 2 times</h5>
-                <button id="claimBtn">Claim</button>
+                <h5 class="card-title justify-content-center">Play the game 2 times</h5>
+                <div class="d-flex justify-content-center mb-3">
+                    <button class="claimBtn col-lg-3" id="claimBtn1">Claim</button>
+                </div>
             </div>
         </div>
-        <div class="card">
-            <div class="card-body">
+        <div id="conquista2" class="card d-flex justify-content-center mb-3">
+            <div class="card-body justify-content-center">
                 <h5 class="card-title">Play 10 Quizzes</h5>
-                <button id="claimBtn">Claim</button>
+                <div class="d-flex justify-content-center mb-3">
+                    <button class="claimBtn col-lg-3" id="claimBtn2">Claim</button>
+                </div>
+            </div>
+        </div>
+        <div id="conquista3" class="card d-flex justify-content-center mb-3">
+            <div class="card-body justify-content-center">
+                <h5 class="card-title">Get 100 points</h5>
+                <div class="d-flex justify-content-center mb-3">
+                    <button class="claimBtn col-lg-3" id="claimBtn3">Claim</button>
+                </div>
             </div>
         </div>
     </div>
@@ -90,7 +101,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <img class="modalBG" src="images/modal_bg.png" alt="">
+                    <img class="modalBG" src="../images/modal_bg.png" height="250px" width="450px">
                 </div>
                 <div class="modal-body">
                     <form id="frmRegister">

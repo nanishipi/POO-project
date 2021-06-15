@@ -24,12 +24,19 @@ export default class ProfileView {
         this.modalPassword = document.getElementById('modalPassword')
         this.mdlEditedMsg = document.getElementById('mdlEditedMsg')
 
+        //Cards Conquistas
+        this.card1 = document.getElementById('conquista1')
+        this.card2 = document.getElementById('conquista2')
+        this.card3 = document.getElementById('conquista3')
+
         //Buttons DOM
         this.editBtn = document.getElementById('editBtn')
         this.editModalBtn = document.getElementById('editModalBtn')
+        this.claimbtn1 = document.getElementById('claimBtn1')
+        this.claimbtn2 = document.getElementById('claimBtn2')
+        this.claimbtn3 = document.getElementById('claimBtn3')
 
-        
-
+        this.bindClaimPoints()
         this.bindEditUserForm()
         this.bindgetUserInfo()
     }
@@ -49,6 +56,7 @@ export default class ProfileView {
 
     bindgetUserInfo() {
         let loggeduser = this.userController.userModel.getAll().filter(user => user.username == sessionStorage.getItem('userName'));
+        console.log(loggeduser)
         this.username.value += loggeduser[0].username
         this.email.value += loggeduser[0].email
         this.gender.value += loggeduser[0].gender
@@ -64,6 +72,36 @@ export default class ProfileView {
         this.modalAdress.value += loggeduser[0].adress
         this.modalBirthDate.value += loggeduser[0].birthday
         this.modalPassword.value += loggeduser[0].password
+
+        if (loggeduser[0].points >= 100){
+            this.claimbtn3.disabled = false;
+        }
+        else {
+            this.claimbtn3.disabled = true;
+        }
+        
+        if (loggeduser[0].quizzesPlayed >= 10) {
+            this.claimbtn2.disabled = false;
+        }
+        else {
+            this.claimbtn2.disabled = true;
+        }
+    }
+
+    bindClaimPoints() {
+        let loggeduser = this.userController.userModel.getAll().filter(user => user.username == sessionStorage.getItem('userName'));
+        this.claimbtn3.addEventListener('click', () => {
+            loggeduser.points += 50
+            this.claimbtn3.disabled = true
+        })
+        this.claimbtn2.addEventListener('click', () => {
+            loggeduser.points += 50
+            this.claimbtn2.disabled = true
+        })
+        this.claimbtn1.addEventListener('click', () => {
+            loggeduser.points += 50
+            this.claimbtn1.disabled = true
+        })
     }
 
     getAvatarByPoints(){
