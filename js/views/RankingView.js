@@ -12,8 +12,12 @@ export default class RankingView {
     }
 
    renderCatalog() {
-       let sortedUsers = this.userModel.getAll().sort((a,b) => (a.points > b.points) ? -1 : ((b.points > a.points) ? 1 : 0))
-       console.log(sortedUsers);
+
+
+        let allUsers = this.userModel.getAll().filter( user => user.type =='user')
+
+       let sortedUsers = allUsers.sort((a,b) => (a.points > b.points) ? -1 : ((b.points > a.points) ? 1 : 0))
+      
     let result = ''
     if (sortedUsers.length != 0) {
         result = `
