@@ -115,7 +115,15 @@ export default class UserModel {
             quizzesPlayed: user.quizzesPlayed
 
         }
-        this.users= this.users.map(user=>user.id==usernew.id?usernew:user)
+        this.users= this.users.map(user=> {
+            if(user.id==usernew.id){
+
+                user = usernew
+            }
+        return user
+        
+        
+        })
         this._persist()
     }
 

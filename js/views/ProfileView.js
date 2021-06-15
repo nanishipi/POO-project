@@ -14,6 +14,7 @@ export default class ProfileView {
         this.birthdate = document.getElementById('birthdate')
         this.password = document.getElementById('password')
         this.photo = document.getElementById('photo')
+        this.avatarLvl = document.getElementById('avatarLvl')
 
         //Profile Modal
         this.modalUsername = document.getElementById('modalUsername')
@@ -113,20 +114,36 @@ export default class ProfileView {
 
     bindProfilePictureInfo(){
         let loggeduser = this.userController.userModel.getAll().filter(user => user.username == sessionStorage.getItem('userName'));
+        let result = ''
         if (loggeduser[0].points <= 50) {
             this.photo.src = this.userModel.getAllImages()[0].src
+            result = `<h2>Avatar Level 1</h2>
+            `
+            this.avatarLvl.innerHTML = result
         }
         else if (loggeduser[0].points >= 51 && loggeduser[0].points <= 101) {
             this.photo.src = this.userModel.getAllImages()[1].src
+            result = `<h2>Avatar Level 2</h2>
+            `
+            this.avatarLvl.innerHTML = result
         }
         else if (loggeduser[0].points >= 101 && loggeduser[0].points <= 200) {
             this.photo.src = this.userModel.getAllImages()[2].src
+            result = `<h2>Avatar Level 3</h2>
+            `
+            this.avatarLvl.innerHTML = result
         }
         else if (loggeduser[0].points >= 201 && loggeduser[0].points <= 500) {
             this.photo.src = this.userModel.getAllImages()[3].src
+            result = `<h2>Avatar Level 4</h2>
+            `
+            this.avatarLvl.innerHTML = result
         }
         else if (501 <= loggeduser[0].points) {
             this.photo.src = this.userModel.getAllImages()[4].src
+            result = `<h2>Avatar Level 5</h2>
+            `
+            this.avatarLvl.innerHTML = result
         }        
     }
     
