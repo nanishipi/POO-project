@@ -29,7 +29,7 @@
 
     <!--Profile Zone-->
     <div class="form col-md-9">
-        <img src="../images/hamster.jpg" alt="Avatar" style="border-radius: 50%; height: 100px; height: 100px;">
+        <img src="../images/hamster.jpg" id="photo" alt="Avatar" style="border-radius: 50%; height: 100px; height: 100px;">
         <div class="file d-flex justify-content-center  mb-3">
             <div class="col-md-6">
                 <label for="username">Username</label><br>
@@ -62,13 +62,94 @@
         </div>
         <div class="file d-flex justify-content-center  mb-6">
             <div class="col-md-6">
-               <button id="editBtn">Editar</button> 
+                <button id="editBtn" data-toggle="modal" data-target="#mdlEdit">Edit</button>
             </div>
         </div>
     </div>
-</div>
-</form>
+    </div>
+    </form>
+
+    <div class="card-deck row">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Play the game 2 times</h5>
+                <button id="claimBtn">Claim</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Play 10 Quizzes</h5>
+                <button id="claimBtn">Claim</button>
+            </div>
+        </div>
+    </div>
     <!--End of Profile Zone-->
+
+    <!--Edit Modal-->
+    <div class="modal fade" id="mdlEdit" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img class="modalBG" src="images/modal_bg.png" alt="">
+                </div>
+                <div class="modal-body">
+                    <form id="frmRegister">
+                        <div class="form-body">
+                            <div class="file d-flex justify-content-center  mb-3">
+                                <div class="col-md-6">
+                                    <label for="modalUsername">Username</label>
+                                    <input type="text" id="modalUsername" class="form-control text-center modalField"
+                                        required>
+                                </div>
+                                <div class="col-md-6 col-md-offset-2">
+                                    <label for="modalEmail">Email</label>
+                                    <input type="email" id="modalEmail" class="form-control text-center modalField"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="file d-flex justify-content-center  mb-3">
+                                <div class="col-md-6">
+                                    <label for="modalAdress">Adress</label>
+                                    <input type="text" id="modalAdress" class="form-control text-center modalField"
+                                        required>
+                                </div>
+                                <div class="col-md-6 col-md-offset-2">
+                                    <label for="modalPassword">Password</label><br>
+                                    <input type="password" id="modalPassword"
+                                        class="form-control text-center modalField" required>
+                                </div>
+                            </div>
+
+                            <div class="file d-flex justify-content-center mb-3">
+                                <div class="col-md-6 text-center">
+                                    <label for="sltModalGender">Gender</label><br>
+                                    <input type="text" id="modalGender" class="form-control text-center modalField"
+                                        required>
+                                </div>
+                                <div class="col-md-6 col-md-offset-2">
+                                    <label for="birthdate">BirthDate</label>
+                                    <input type="text" id="modalBirthDate" class="form-control text-center modalField"
+                                        required>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="d-flex justify-content-center mb-3">
+                            <button type="submit" class="btn btn-primary navButton col-lg-3"
+                                id="editModalBtn">Edit</button>
+                        </div>
+                        <div class="modal-footer">
+                            <div id="mdlEditedMsg" class="col-lg-12 d-flex justify-content-center"></div>
+                        </div>
+                </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <!--End of Edit Modal-->
+
     <script type="module" src="../js/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

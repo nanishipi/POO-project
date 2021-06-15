@@ -13,59 +13,39 @@ export default class ProfileView {
         this.adress = document.getElementById('adress')
         this.birthdate = document.getElementById('birthdate')
         this.password = document.getElementById('password')
+        this.photo = document.getElementById('photo')
+
+        //Profile Modal
+        this.modalUsername = document.getElementById('modalUsername')
+        this.modalEmail = document.getElementById('modalEmail')
+        this.modalAdress = document.getElementById('modalAdress')
+        this.modalGender = document.getElementById('modalGender')
+        this.modalBirthDate = document.getElementById('modalBirthDate')
+        this.modalPassword = document.getElementById('modalPassword')
+        this.mdlEditedMsg = document.getElementById('mdlEditedMsg')
 
         //Buttons DOM
         this.editBtn = document.getElementById('editBtn')
+        this.editModalBtn = document.getElementById('editModalBtn')
 
         this.bindEditUserForm()
-        this.bindgetUserInfo() 
+        this.bindgetUserInfo()
     }
 
     bindEditUserForm() {
-        let loggeduser = this.userController.userModel.getAll().filter(user => user.username ==sessionStorage.getItem('userName'));
-        this.editBtn.addEventListener('click', event => {
-            console.log(loggeduser)
-            this.usernameModal.value = loggeduser.username
-            this.emailModal.value = loggeduser.email
-            this.birthModal.value = loggeduser.birthDate
-            this.locationModal.value = loggeduser.location
-            this.genreModal.value = loggeduser.genre
-            this.passwordModal.value = loggeduser.password
-            this.passwordConfirmModal.value = loggeduser.password
-            this.editProfileModal.addEventListener('click', event => {
-                try {
-                    if (this.weightModal.value > 0 && this.heightModal.value > 0) {
-                        if (this.passwordModal.value == this.passwordConfirmModal.value) {
-                            if (this.emailModal.value != "" && this.usernameModal.value != "" && this.passwordModal.value != "" && this.passwordConfirmModal.value != "" && this.locationModal.value != "" && this.weightModal.value != "" && this.birthModal.value != "" && this.aboutYouModal.value != "" && this.heightModal.value != "" && this.imgProfileModal.value != "") {
-                                if (confirm("Are you Sure to edit?")) {
-                                    let id = this.userController.userModel.getAll().filter(user => user.email == sessionStorage.getItem('loggedUser'))[0].id
-                                    this.userController.editUser(this.emailModal.value, this.usernameModal.value, this.passwordConfirmModal.value, this.locationModal.value, this.genreModal.value, this.weightModal.value, this.birthModal.value, this.aboutYouModal.value, this.heightModal.value, this.imgProfileModal.value, "user", id)
-                                    this.displayEditMessage("User Edited with success", 'success')
-                                    setTimeout(() => {
-                                        window.location.href = "profile.html";
-                                    },
-                                        1000)
-                                }
-                            } else {
-                                throw Error("There are empty fields")
-                            }
-                        } else {
-                            throw Error("Password and Confirm Password are not equal")
-                        }
-                    } else {
-                        throw Error("Just positive numbers")
-                    }
-                }
-                catch (e) {
-                    this.displayEditMessage(e, "danger")
-                }
-            })
+        this.editModalBtn.addEventListener('click', event => {
+            try {
+                this.userController.editProfile(this.modalUsername.value,this.modalEmail.value, this.modalPassword.value, this.modalGender.value, this.modalBirthDate.value, this.photo.src, this.modalAdress.value, "user", "true")
+                this.displayEditedMessage('Registado com sucesso!', 'success');
+            }
+            catch {
+                this.displayEditedMessage(e, 'danger');
+            }    
         })
     }
 
     bindgetUserInfo() {
-        let loggeduser = this.userController.userModel.getAll().filter(user => user.username ==sessionStorage.getItem('userName'));
-        console.log(loggeduser)
+        let loggeduser = this.userController.userModel.getAll().filter(user => user.username == sessionStorage.getItem('userName'));
         this.username.value += loggeduser[0].username
         this.email.value += loggeduser[0].email
         this.gender.value += loggeduser[0].gender
@@ -73,14 +53,16 @@ export default class ProfileView {
         this.birthdate.value += loggeduser[0].birthday
         this.password.value += loggeduser[0].password
 
-        let users = this.userController.userModel.getAll().filter(user => user.type == "user").sort(function (a, b) { return parseInt(b.points) - parseInt(a.points) })
-        if (users.length>=3) {
-            this.third.innerHTML=users[2].username
-            this.imgThird.scr=users[2].photo
-            this.second.innerHTML=users[1].username
-            this.imgSecond.src=users[1].photo
-            this.first.innerHTML=users[0].username
-            this.imgFirst.src=users[0].photo    
-        }
+        this.modalUsername.value += loggeduser[0].username
+        this.modalEmail.value += loggeduser[0].email
+        this.modalGender.value += loggeduser[0].gender
+        this.modalAdress.value += loggeduser[0].adress
+        this.modalBirthDate.value += loggeduser[0].birthday
+        this.modalPassword.value += loggeduser[0].password
+    }
+
+    displayEditedMessage(){
+        this.mdlEditedMsg.innerHTML =
+            `<div class="alert alert-${type}" role="alert">${message}</div>`;
     }
 }
