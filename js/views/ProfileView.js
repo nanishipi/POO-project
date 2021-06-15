@@ -36,10 +36,15 @@ export default class ProfileView {
         this.claimbtn2 = document.getElementById('claimBtn2')
         this.claimbtn3 = document.getElementById('claimBtn3')
 
+<<<<<<< HEAD
         this.bindProfilePictureInfo()
         this.bindClaimPoints()
+=======
+        
+>>>>>>> 6bd327dc1e8473187561a2f5d69bba7b9319bbf7
         this.bindEditUserForm()
         this.bindgetUserInfo()
+        this.bindClaimPoints()
     }
 
 
@@ -87,25 +92,29 @@ export default class ProfileView {
         else {
             this.claimbtn2.disabled = true;
         }
+
+      
     }
 
     bindClaimPoints() {
-        let loggeduser = this.userController.userModel.getAll().filter(user => user.username == sessionStorage.getItem('userName'));
+        let points = 50
+       
         this.claimbtn3.addEventListener('click', () => {
-            loggeduser.points += 50
+            
+            this.userController.addPoints(points)
             this.claimbtn3.disabled = true
         })
         this.claimbtn2.addEventListener('click', () => {
-            loggeduser.points += 50
+            this.userController.addPoints(points)
             this.claimbtn2.disabled = true
         })
         this.claimbtn1.addEventListener('click', () => {
-            loggeduser.points += 50
+            this.userController.addPoints(points)
+            
             this.claimbtn1.disabled = true
         })
     }
 
-<<<<<<< HEAD
     bindProfilePictureInfo(){
         let loggeduser = this.userController.userModel.getAll().filter(user => user.username == sessionStorage.getItem('userName'));
         if (loggeduser[0].points <= 50) {
@@ -131,6 +140,10 @@ export default class ProfileView {
 >>>>>>> c614fe2acac78ac436cd0215c9c14b7ce0a152b2
     }
 
+=======
+
+
+>>>>>>> 6bd327dc1e8473187561a2f5d69bba7b9319bbf7
     displayEditedMessage(){
         this.mdlEditedMsg.innerHTML =
             `<div class="alert alert-${type}" role="alert">${message}</div>`;
