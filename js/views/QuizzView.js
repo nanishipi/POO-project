@@ -24,8 +24,7 @@ export default class QuizzView {
             setTimeout(() => {
                 location.href = "question.html"
 
-            },
-                1000);
+            })
         })
 
         this.btnQuizz2.addEventListener('click', event => {
@@ -35,8 +34,7 @@ export default class QuizzView {
             setTimeout(() => {
                 location.href = "question.html"
 
-            },
-                1000);
+            });
         })
 
         this.btnQuizz3.addEventListener('click', event => {
@@ -46,8 +44,7 @@ export default class QuizzView {
             setTimeout(() => {
                 location.href = "question.html"
 
-            },
-                1000);
+            });
         })
     }
 

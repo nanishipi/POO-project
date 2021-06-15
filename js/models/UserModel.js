@@ -3,7 +3,6 @@ export default class UserModel {
     constructor() {
         this.users = localStorage.users ? JSON.parse(localStorage.users) : [];
         this.images = localStorage.images ? JSON.parse(localStorage.images) : [];
-        console.log(this.images)
     }
 
     getAll() {
@@ -100,20 +99,17 @@ export default class UserModel {
         let newPoints=user.points+points
         const usernew={
             id:user.id,
-            email:user.email,
-            username:user.username,
-            password:user.password,
-            location:user.location,
-            genre: user.genre,
-            weight: user.weight,
-            birthDate: user.birthDate,
-            aboutUser: user.aboutUser,
-            height: user.height,
+            username: user.username,
+            email: user.email,
+            password: user.password,
+            gender: user.gender,
+            birthday: user.birthday,
             photo: user.photo,
+            adress: user.adress,
             type: user.type,
-            points:newPoints,
+            status: user.status,
+            points: newPoints,
             quizzesPlayed: user.quizzesPlayed
-
         }
         this.users= this.users.map(user=>user.id==usernew.id?usernew:user)
         this._persist()
@@ -124,24 +120,20 @@ export default class UserModel {
         let newQuizzes =user.quizzesPlayed + quizzes
         const usernew={
             id:user.id,
-            email:user.email,
-            username:user.username,
-            password:user.password,
-            location:user.location,
-            genre: user.genre,
-            weight: user.weight,
-            birthDate: user.birthDate,
-            aboutUser: user.aboutUser,
-            height: user.height,
+            username: user.username,
+            email: user.email,
+            password: user.password,
+            gender: user.gender,
+            birthday: user.birthday,
             photo: user.photo,
+            adress: user.adress,
             type: user.type,
+            status: user.status,
             points: user.points,
             quizzesPlayed: newQuizzes
-
         }
         this.users= this.users.map(user=>user.id==usernew.id?usernew:user)
         this._persist()
     }
-
 
 }
