@@ -80,6 +80,7 @@ export default class adminUserView {
 
    renderCatalog(users = []) {
     let result = ''
+    let allUsers = this.userModel.getAll().filter( user => user.type =='user')
     if (users.length != 0) {
         result = `
         <table id="Table" class="info text-center"><tr><th>ID</th><th>Nome</th><th>Email</th><th>Ações</th></tr>
@@ -88,7 +89,7 @@ export default class adminUserView {
         result = `<p class="info">Sem utilizadores!</p>`
     }
 
-    for (const user of users) {
+    for (const user of allUsers) {
         
         result += `                
         <td>${user.id}</td>
