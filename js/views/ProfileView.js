@@ -36,12 +36,8 @@ export default class ProfileView {
         this.claimbtn2 = document.getElementById('claimBtn2')
         this.claimbtn3 = document.getElementById('claimBtn3')
 
-<<<<<<< HEAD
         this.bindProfilePictureInfo()
         this.bindClaimPoints()
-=======
-        
->>>>>>> 6bd327dc1e8473187561a2f5d69bba7b9319bbf7
         this.bindEditUserForm()
         this.bindgetUserInfo()
         this.bindClaimPoints()
@@ -132,18 +128,8 @@ export default class ProfileView {
         else if (501 <= loggeduser[0].points) {
             this.photo.src = this.userModel.getAllImages()[4].src
         }        
-=======
-    getAvatarByPoints(){
-
-
-
->>>>>>> c614fe2acac78ac436cd0215c9c14b7ce0a152b2
     }
-
-=======
-
-
->>>>>>> 6bd327dc1e8473187561a2f5d69bba7b9319bbf7
+    
     displayEditedMessage(){
         this.mdlEditedMsg.innerHTML =
             `<div class="alert alert-${type}" role="alert">${message}</div>`;
