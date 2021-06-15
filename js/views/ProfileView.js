@@ -48,12 +48,12 @@ export default class ProfileView {
     bindEditUserForm() {
         this.editModalBtn.addEventListener('click', event => {
             try {
-                this.userController.editProfile(this.modalUsername.value,this.modalEmail.value, this.modalPassword.value, this.modalGender.value, this.modalBirthDate.value, this.photo.src, this.modalAdress.value, "user", "true")
+                this.userController.editProfile(this.modalUsername.value, this.modalEmail.value, this.modalPassword.value, this.modalGender.value, this.modalBirthDate.value, this.photo.src, this.modalAdress.value, "user", "true")
                 this.displayEditedMessage('Registado com sucesso!', 'success');
             }
             catch {
                 this.displayEditedMessage(e, 'danger');
-            }    
+            }
         })
     }
 
@@ -76,13 +76,13 @@ export default class ProfileView {
         this.modalBirthDate.value += loggeduser[0].birthday
         this.modalPassword.value += loggeduser[0].password
 
-        if (loggeduser[0].points >= 100){
+        if (loggeduser[0].points >= 100) {
             this.claimbtn3.disabled = false;
         }
         else {
             this.claimbtn3.disabled = true;
         }
-        
+
         if (loggeduser[0].quizzesPlayed >= 10) {
             this.claimbtn2.disabled = false;
         }
@@ -90,29 +90,53 @@ export default class ProfileView {
             this.claimbtn2.disabled = true;
         }
 
-      
+        if (loggeduser[0].quizzesPlayed >= 1) {
+            this.claimbtn1.disabled = false;
+        }
+        else {
+            this.claimbtn1.disabled = true;
+        }
+
+
     }
 
     bindClaimPoints() {
         let points = 50
-       
+
         this.claimbtn3.addEventListener('click', () => {
-            
             this.userController.addPoints(points)
             this.claimbtn3.disabled = true
+            swal({
+                title: "Congratulations!!!",
+
+                text: "Congratus, you claimed " + points + " points!",
+                icon: "success",       
+            })
         })
         this.claimbtn2.addEventListener('click', () => {
             this.userController.addPoints(points)
             this.claimbtn2.disabled = true
+            swal({
+                title: "Congratulations!!!",
+
+                text: "Congratus, you claimed " + points + " points!",
+                icon: "success",       
+            })
+    
         })
         this.claimbtn1.addEventListener('click', () => {
             this.userController.addPoints(points)
-            
             this.claimbtn1.disabled = true
+            swal({
+                title: "Congratulations!!!",
+
+                text: "Congratus, you claimed " + points + " points!",
+                icon: "success",       
+            })
         })
     }
 
-    bindProfilePictureInfo(){
+    bindProfilePictureInfo() {
         let loggeduser = this.userController.userModel.getAll().filter(user => user.username == sessionStorage.getItem('userName'));
         let result = ''
         if (loggeduser[0].points <= 50) {
@@ -144,10 +168,10 @@ export default class ProfileView {
             result = `<h2>Avatar Level 5</h2>
             `
             this.avatarLvl.innerHTML = result
-        }        
+        }
     }
-    
-    displayEditedMessage(){
+
+    displayEditedMessage() {
         this.mdlEditedMsg.innerHTML =
             `<div class="alert alert-${type}" role="alert">${message}</div>`;
     }
