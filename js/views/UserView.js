@@ -7,7 +7,6 @@ export default class UserView {
         // register DOM
         this.registerForm = document.getElementById('frmRegister');
         this.registerBtn = document.getElementById('btnRegister');
-        this.registerPhoto = document.getElementById("txtUserPhoto");
         this.registerUsername = document.getElementById('txtUsernameRegister');
         this.registerPassword = document.getElementById('txtPasswordRegister');
         this.registerPassword2 = document.getElementById('txtPasswordRegister2');
@@ -47,7 +46,7 @@ export default class UserView {
                     } else {
 
 
-                        this.userController.createUser(this.registerUsername.value, this.registerEmail.value, this.registerPassword.value, this.registerGender.value, this.registerBirthday.value, this.registerPhoto.value, "", "user", "true");
+                        this.userController.createUser(this.registerUsername.value, this.registerEmail.value, this.registerPassword.value, this.registerGender.value, this.registerBirthday.value, "", "", "user", "true");
 
                         this.displayRegisterMessage('Registado com sucesso!', 'success');
                         setTimeout(() => {
