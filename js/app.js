@@ -11,6 +11,7 @@ import RankingView from './views/RankingView.js';
 import logoutView from './views/logoutView.js';
 
 
+
 class App {
     constructor() {
         this.routes = {
@@ -55,7 +56,8 @@ class App {
             'ranking':[
                 RankingView,
                 logoutView
-            ]
+            ],
+        
         };
 
         // import dummy data for testing purposes

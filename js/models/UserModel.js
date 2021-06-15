@@ -143,4 +143,5 @@ export default class UserModel {
         this._persist()
     }
 
+
 }

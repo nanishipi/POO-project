@@ -42,6 +42,7 @@ export default class ProfileView {
         this.bindgetUserInfo()
     }
 
+
     bindEditUserForm() {
         this.editModalBtn.addEventListener('click', event => {
             try {
@@ -63,6 +64,8 @@ export default class ProfileView {
         this.adress.value += loggeduser[0].adress
         this.birthdate.value += loggeduser[0].birthday
         this.password.value += loggeduser[0].password
+        this.photo.value += loggeduser[0].photo
+
 
         this.modalUsername.value += loggeduser[0].username
         this.modalEmail.value += loggeduser[0].email
@@ -102,6 +105,7 @@ export default class ProfileView {
         })
     }
 
+<<<<<<< HEAD
     bindProfilePictureInfo(){
         let loggeduser = this.userController.userModel.getAll().filter(user => user.username == sessionStorage.getItem('userName'));
         if (loggeduser[0].points <= 50) {
@@ -119,6 +123,12 @@ export default class ProfileView {
         else if (501 <= loggeduser[0].points) {
             this.photo.src = this.userModel.getAllImages()[4].src
         }        
+=======
+    getAvatarByPoints(){
+
+
+
+>>>>>>> c614fe2acac78ac436cd0215c9c14b7ce0a152b2
     }
 
     displayEditedMessage(){
