@@ -16,12 +16,14 @@ export default class gameView {
 
         this.card()
         this.shuffle()
+        
     }
 
     card() {
         this.cards.forEach(card => card.addEventListener('click', event => {
 
             this.flipCard(event)
+            this.checkGameOver()
 
         }));
     }
@@ -94,5 +96,28 @@ export default class gameView {
         let isMatch = this.firstCard.id.replace("1", '') == this.secondCard.id.replace("1", '')
         console.log(isMatch)
         isMatch ? this.disableCards() : this.unflipCards();
+    }
+
+
+    checkGameOver(){
+
+        this.cards = document.querySelectorAll('.flip');
+        let points = 50
+        if(this.cards.length == 12)
+        {
+            this.userController.addPoints(points)
+            setTimeout(()=>{
+
+            swal({
+                title: "Congratulations!!!",
+                text: "You Win " + points + " Points!",
+                icon: "success",       
+           
+        },1000)
+            location.href='jogo.html'
+
+            })
+        }
+
     }
 }
