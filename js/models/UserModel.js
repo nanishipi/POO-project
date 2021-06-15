@@ -98,22 +98,19 @@ export default class UserModel {
     addPoints(points){
         const user = this.getCurrentUser()
         let newPoints=user.points+points
-        const usernew={
-            id:user.id,
-            email:user.email,
-            username:user.username,
-            password:user.password,
-            location:user.location,
-            genre: user.genre,
-            weight: user.weight,
-            birthDate: user.birthDate,
-            aboutUser: user.aboutUser,
-            height: user.height,
+        const usernew = {
+            id: currentUser.id,
+            username: user.username,
+            email: user.email,
+            password: user.password,
+            gender: user.gender,
+            birthday: user.birthday,
             photo: user.photo,
-            type: user.type,
+            adress:user.adress,
+            type:user.type,
+            status:user.status,
             points:newPoints,
             quizzesPlayed: user.quizzesPlayed
-
         }
         this.users= this.users.map(user=> {
             if(user.id==usernew.id){
@@ -130,22 +127,19 @@ export default class UserModel {
     addQuizzesPlayed(quizzes){
         const user = this.getCurrentUser()
         let newQuizzes =user.quizzesPlayed + quizzes
-        const usernew={
-            id:user.id,
-            email:user.email,
-            username:user.username,
-            password:user.password,
-            location:user.location,
-            genre: user.genre,
-            weight: user.weight,
-            birthDate: user.birthDate,
-            aboutUser: user.aboutUser,
-            height: user.height,
+        const usernew = {
+            id: currentUser.id,
+            username: user.username,
+            email: user.email,
+            password: user.password,
+            gender: user.gender,
+            birthday: user.birthday,
             photo: user.photo,
-            type: user.type,
-            points: user.points,
+            adress:user.adress,
+            type:user.type,
+            status:user.status,
+            points:user.points,
             quizzesPlayed: newQuizzes
-
         }
         this.users= this.users.map(user=>user.id==usernew.id?usernew:user)
         this._persist()
