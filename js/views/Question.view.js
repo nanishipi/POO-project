@@ -60,7 +60,6 @@ export default class QuestionView {
     }
 
     checkSubmition() {
-
         this.submitBtn.addEventListener('click', event => {
             event.preventDefault();
 
@@ -74,13 +73,10 @@ export default class QuestionView {
                 /* alert(question.pergunta) */
                 const answer = document.querySelector(`input[name="${question.id}"]:checked`)
 
-
                 if (answer.value == question.resposta) {
                     points = question.pontos
                     correct_questions++
-
                 }
-
             }
 
             let totalPoints = points * correct_questions
@@ -93,26 +89,21 @@ export default class QuestionView {
                     icon: "success",
                     buttons:
                     {
-
                         confirm: {
                             text: "OK",
                             visible: true,
                             closeModal: false
                         }
                     },
-                    
-
                 }).then((confirm) => {
                     if (confirm) {
                         this.userController.addPoints(totalPoints)
                         this.userController.addQuizzesPlayed(1)
                         setTimeout(() => this.redirect() ,500);
-                        
                     } 
                 })
             }
             else {
-
                 swal({
                     icon: 'error',
                     title: 'Oops...',
@@ -120,9 +111,6 @@ export default class QuestionView {
 
                 })
             }
-
-
         })
-
     }
 }

@@ -3,7 +3,6 @@ export default class UserModel {
     constructor() {
         this.users = localStorage.users ? JSON.parse(localStorage.users) : [];
         this.images = localStorage.images ? JSON.parse(localStorage.images) : [];
-        console.log(this.images)
     }
 
     getAll() {
@@ -98,18 +97,18 @@ export default class UserModel {
     addPoints(points){
         const user = this.getCurrentUser()
         let newPoints=user.points+points
-        const usernew = {
-            id: currentUser.id,
+        const usernew={
+            id:user.id,
             username: user.username,
             email: user.email,
             password: user.password,
             gender: user.gender,
             birthday: user.birthday,
             photo: user.photo,
-            adress:user.adress,
-            type:user.type,
-            status:user.status,
-            points:newPoints,
+            adress: user.adress,
+            type: user.type,
+            status: user.status,
+            points: newPoints,
             quizzesPlayed: user.quizzesPlayed
         }
         this.users= this.users.map(user=> {
@@ -127,23 +126,22 @@ export default class UserModel {
     addQuizzesPlayed(quizzes){
         const user = this.getCurrentUser()
         let newQuizzes =user.quizzesPlayed + quizzes
-        const usernew = {
-            id: currentUser.id,
+        const usernew={
+            id:user.id,
             username: user.username,
             email: user.email,
             password: user.password,
             gender: user.gender,
             birthday: user.birthday,
             photo: user.photo,
-            adress:user.adress,
-            type:user.type,
-            status:user.status,
-            points:user.points,
+            adress: user.adress,
+            type: user.type,
+            status: user.status,
+            points: user.points,
             quizzesPlayed: newQuizzes
         }
         this.users= this.users.map(user=>user.id==usernew.id?usernew:user)
         this._persist()
     }
-
 
 }
